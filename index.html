@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinkercad IoT Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    
+    <!-- Navbar -->
+    <nav class=" bg-gray-900 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 class="text-xl font-bold">Tinkercad IoT Showcase</h1>
+        <div>
+            <a href="projects.html" class="mx-4 hover:text-gray-200">Projects</a>
+            <a href="submit.html" class="mx-4 hover:text-gray-200">Submit</a>
+            <a href="login.html" class="mx-4 hover:text-gray-200">Login</a>
+            <a href="register.html" class="mx-4 hover:text-gray-200">Registration</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="text-center py-20 bg-blue-500 text-white">
+        <h2 class="text-4xl font-bold mb-4">Showcase Your IoT Projects</h2>
+        <p class="text-lg mb-6">A platform to share, collaborate, and inspire with your Tinkercad IoT creations.</p>
+        <a href="projects.html" class="bg-white text-blue-500 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100">Show Project</a>
+    </header>
+    
+        <!-- About Us - Team Members -->
+<section class="max-w-6xl mx-auto py-10">
+    <h3 class="text-3xl font-bold text-center mb-6">Meet Our Team</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <img src="assets/member1.jpg" alt="Team Member" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4 class="text-xl font-semibold text-center">John Doe</h4>
+            <p class="text-gray-600 text-center">Lead Developer</p>
+            <p class="text-gray-500 text-center">Specializing in backend development, John oversees the core functionality of our projects.</p>
+            <a href="#" class="text-blue-500 font-semibold block mt-2 text-center">View Profile →</a>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <img src="assets/member2.jpg" alt="Team Member" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4 class="text-xl font-semibold text-center">Jane Smith</h4>
+            <p class="text-gray-600 text-center">UI/UX Designer</p>
+            <p class="text-gray-500 text-center">Jane is responsible for creating intuitive designs that enhance user experience across our platform.</p>
+            <a href="#" class="text-blue-500 font-semibold block mt-2 text-center">View Profile →</a>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <img src="assets/member3.jpg" alt="Team Member" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4 class="text-xl font-semibold text-center">Alex Brown</h4>
+            <p class="text-gray-600 text-center">Project Manager</p>
+            <p class="text-gray-500 text-center">With a focus on project delivery, Alex ensures that all milestones are met and the team is on track.</p>
+            <a href="#" class="text-blue-500 font-semibold block mt-2 text-center">View Profile →</a>
+        </div>
+    </div>
+</section>
+
+
+
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+        <p>&copy; 2025 Tinkercad IoT Showcase. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "bounce" });
+        gsap.from(".grid div", { duration: 1, opacity: 0, stagger: 0.3, y: 50 });
+    </script>
+</body>
+</html>
