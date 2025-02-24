@@ -42,13 +42,13 @@
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
         <h2 class="text-5xl font-bold text-center mb-4 text-yellow-400">IoT Weather Station</h2>
-        <p class="text-center text-lg text-gray-400 mb-6">By <strong><a href="#author" class="text-yellow-300 hover:underline">John Doe</a></strong></p>
+        <p class="text-center text-lg text-gray-400 mb-6">By <strong><a href="#author" class="text-yellow-300 hover:underline">Ankan Bhowmik</a></strong></p>
 
         <!-- Sections -->
         <div id="concept" class="mt-10 border-b-2 border-yellow-300 pb-6">
             <h3 class="text-3xl text-center text-yellow-300 mb-4">Concept</h3>
             <p class="text-gray-300 text-lg leading-relaxed text-center">
-                The IoT Weather Station is designed to monitor real-time temperature and humidity using IoT sensors.
+                The IoT Weather Station collects real-time environmental data using temperature, humidity, and pressure sensors. It transmits data to a cloud server for remote monitoring and analysis.
             </p>
         </div>
 
@@ -58,24 +58,57 @@
                 <li>DHT11 Temperature & Humidity Sensor</li>
                 <li>ESP8266 Wi-Fi Module</li>
                 <li>Arduino Uno or NodeMCU</li>
+                <li>Resistors (1kΩ, 10kΩ)</li>
+                <li>LEDs (Red, Green)</li>
+                <li>Jumper Wires & Breadboard</li>
             </ul>
         </div>
 
         <div id="connections" class="mt-10 border-b-2 border-yellow-300 pb-6">
             <h3 class="text-3xl text-center text-yellow-300 mb-4">Connections</h3>
-            <p class="text-gray-300 text-lg leading-relaxed text-center mb-6">
-                The DHT11 sensor is connected to Arduino/ESP8266 to read temperature and humidity data.
-            </p>
+            <ul class="list-disc text-gray-300 text-lg mx-auto max-w-lg">
+                <li>Connect the anode (long leg) of the Red LED to digital pin 9 on the Arduino with a 1kΩ resistor.</li>
+                <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+                <li>Connect the anode (long leg) of the Green LED to digital pin 8 on the Arduino with a 1kΩ resistor.</li>
+                <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+                <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
+            </ul>
         </div>
 
         <div id="circuit-diagram" class="mt-10 border-b-2 border-yellow-300 pb-6">
             <h3 class="text-3xl text-center text-yellow-300 mb-4">Circuit Diagram</h3>
-            <img src="assets/circuit-diagram.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+            <img src="c:\Users\PROLAYJIT BISWAS\AppData\Local\Packages\Microsoft.ScreenSketch_8wekyb3d8bbwe\TempState\Snips\Screenshot 2025-02-25 000426.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
         </div>
 
         <div id="prototype-overview" class="mt-10 border-b-2 border-yellow-300 pb-6">
             <h3 class="text-3xl text-center text-yellow-300 mb-4">Prototype Overview</h3>
             <img src="assets/prototype-overview.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        </div>
+
+
+        <!-- Arduino Code Section -->
+        <div id="arduino-code" class="mt-10 border-b-2 border-yellow-300 pb-6 text-center">
+            <h3 class="text-3xl text-yellow-300 mb-4">Arduino Code</h3>
+            <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
+                <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
+// Sample Arduino code for IoT Weather Station
+
+void setup() {
+    pinMode(9, OUTPUT);
+    pinMode(8, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(9, HIGH);
+    digitalWrite(8, LOW);
+    delay(30000); // Wait for 30 seconds
+
+    digitalWrite(8, HIGH);
+    digitalWrite(9, LOW);
+    delay(30000); // Wait for 30 seconds
+}
+                </code></pre>
+            </div>
         </div>
 
         <div id="simulation-model" class="mt-10 border-b-2 border-yellow-300 pb-6">
@@ -88,14 +121,16 @@
             <h3 class="text-3xl text-yellow-300 mb-4">About the Author</h3>
             <p class="text-lg text-gray-400">John Doe is an IoT enthusiast with a passion for building innovative projects.</p>
         </div>
-
-        <!-- Back to Projects Button -->
-        <div class="text-center mt-12">
-            <a href="./projects.html" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-600 transition-all duration-300">
-                ← Back to Projects
-            </a>
-        </div>
     </section>
+
+    <!-- Back to Projects Button -->
+    <div class="text-center mt-12">
+        <a href="./projects.html" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-600 transition-all duration-300">
+            ← Back to Projects
+        </a>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center p-6 mt-16 shadow-inner">
@@ -109,19 +144,11 @@
 
         toggleSidebar.addEventListener("click", () => {
             if (sidebar.classList.contains("-translate-x-64")) {
-                sidebar.classList.remove("-translate-x-64");
                 gsap.to(sidebar, { x: 0, duration: 0.3 });
+                sidebar.classList.remove("-translate-x-64");
             } else {
                 gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
             }
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll("aside a").forEach(anchor => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
-            });
         });
     </script>
 </body>
