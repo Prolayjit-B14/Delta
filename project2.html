@@ -20,113 +20,81 @@
         </div>
     </nav>
 
-    <!-- Project Details -->
+    <!-- Sidebar Toggle Button -->
+    <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-yellow-600 transition-all">
+        ☰ Menu
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-gray-800 text-white transform -translate-x-64 transition-transform duration-300 shadow-xl">
+        <h2 class="text-xl font-bold text-center mt-8 mb-4 text-yellow-400">Navigation</h2>
+        <ul class="space-y-4 text-lg pl-6">
+            <li><a href="#concept" class="block hover:text-yellow-300 transition-all">🔹 Concept</a></li>
+            <li><a href="#components" class="block hover:text-yellow-300 transition-all">🔹 Components</a></li>
+            <li><a href="#connections" class="block hover:text-yellow-300 transition-all">🔹 Connections</a></li>
+            <li><a href="#circuit-diagram" class="block hover:text-yellow-300 transition-all">🔹 Circuit Diagram</a></li>
+            <li><a href="#prototype-overview" class="block hover:text-yellow-300 transition-all">🔹 Prototype</a></li>
+            <li><a href="#simulation-model" class="block hover:text-yellow-300 transition-all">🔹 Simulation</a></li>
+            <li><a href="#author" class="block hover:text-yellow-300 transition-all">🔹 Author</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
         <h2 class="text-5xl font-bold text-center mb-4 text-yellow-400">IoT Weather Station</h2>
         <p class="text-center text-lg text-gray-400 mb-6">By <strong><a href="#author" class="text-yellow-300 hover:underline">John Doe</a></strong></p>
 
-        <!-- Video -->
-        <div class="flex justify-center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="IoT Weather Station" frameborder="0" allowfullscreen class="rounded-lg shadow-xl"></iframe>
+        <!-- Sections -->
+        <div id="concept" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Concept</h3>
+            <p class="text-gray-300 text-lg leading-relaxed text-center">
+                The IoT Weather Station is designed to monitor real-time temperature and humidity using IoT sensors.
+            </p>
         </div>
 
-        <!-- Description -->
-        <p class="text-gray-300 text-lg leading-relaxed text-center mt-6">
-            Monitor real-time temperature, humidity, and atmospheric conditions using IoT sensors. This project integrates Tinkercad circuits and cloud-based data visualization for weather tracking.
-        </p>
-
-        <!-- Image Gallery -->
-        <div class="mt-10">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Project Gallery</h3>
-            <div class="flex justify-center space-x-4">
-                <img src="assets/project2a.jpg" class="w-1/3 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
-                <img src="assets/project2b.jpg" class="w-1/3 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
-                <img src="assets/project2c.jpg" class="w-1/3 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
-            </div>
-        </div>
-
-        <!-- Circuit Design -->
-        <div class="mt-12">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Circuit Design</h3>
-            <img src="assets/circuit.jpg" alt="Circuit Design" class="mx-auto rounded-lg shadow-lg">
-        </div>
-
-        <!-- Components List -->
-        <div class="mt-12">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Components Used</h3>
+        <div id="components" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Components Required</h3>
             <ul class="list-disc text-gray-300 text-lg mx-auto max-w-lg">
                 <li>DHT11 Temperature & Humidity Sensor</li>
                 <li>ESP8266 Wi-Fi Module</li>
-                <li>Arduino Uno</li>
-                <li>LCD Display</li>
-                <li>Resistors, LEDs, and Jumper Wires</li>
+                <li>Arduino Uno or NodeMCU</li>
             </ul>
         </div>
 
-        <!-- Code Section -->
-        <div class="mt-12">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Project Code</h3>
-            <pre class="rounded-lg shadow-lg overflow-x-auto p-4"><code class="language-cpp">
-#include &lt;DHT.h&gt;
-#define DHTPIN 2
-#define DHTTYPE DHT11
-
-DHT dht(DHTPIN, DHTTYPE);
-
-void setup() {
-    Serial.begin(9600);
-    dht.begin();
-}
-
-void loop() {
-    float temp = dht.readTemperature();
-    float humidity = dht.readHumidity();
-    Serial.print("Temp: "); Serial.print(temp);
-    Serial.print("°C, Humidity: "); Serial.print(humidity); Serial.println("%");
-    delay(2000);
-}
-            </code></pre>
+        <div id="connections" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Connections</h3>
+            <p class="text-gray-300 text-lg leading-relaxed text-center mb-6">
+                The DHT11 sensor is connected to Arduino/ESP8266 to read temperature and humidity data.
+            </p>
         </div>
 
-        <div class="text-center mt-6">
-            <a href="./projects.html" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-600 transition-all duration-300">
-                ← Back to Projects
-            </a>
+        <div id="circuit-diagram" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Circuit Diagram</h3>
+            <img src="assets/circuit-diagram.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
         </div>
 
-        <!-- Comment Section -->
-        <div class="mt-12">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Comments</h3>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-6">
-                <div class="comment">
-                    <p class="font-bold text-yellow-300">Alice</p>
-                    <p class="text-gray-400">This project is amazing! The integration of weather sensors with cloud data is really cool.</p>
-                    <button class="text-yellow-300 mt-2 hover:underline" onclick="toggleReplyForm('reply1')">Reply</button>
-                    <div id="reply1" class="mt-4 hidden pl-6">
-                        <textarea class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="Write a reply..."></textarea>
-                        <button class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg mt-2">Post Reply</button>
-                    </div>
-                </div>
+        <div id="prototype-overview" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Prototype Overview</h3>
+            <img src="assets/prototype-overview.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        </div>
 
-                <div class="comment">
-                    <p class="font-bold text-yellow-300">Bob</p>
-                    <p class="text-gray-400">Nice work! I would love to know more about the ESP8266 and how you used it.</p>
-                    <button class="text-yellow-300 mt-2 hover:underline" onclick="toggleReplyForm('reply2')">Reply</button>
-                    <div id="reply2" class="mt-4 hidden pl-6">
-                        <textarea class="w-full p-3 rounded-lg bg-gray-700 text-white" placeholder="Write a reply..."></textarea>
-                        <button class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg mt-2">Post Reply</button>
-                    </div>
-                </div>
-            </div>
+        <div id="simulation-model" class="mt-10 border-b-2 border-yellow-300 pb-6">
+            <h3 class="text-3xl text-center text-yellow-300 mb-4">Simulation Model</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
         </div>
 
         <!-- Author Section -->
         <div id="author" class="mt-12 text-center">
             <h3 class="text-3xl text-yellow-300 mb-4">About the Author</h3>
-            <p class="text-lg text-gray-400">John Doe is an IoT enthusiast with a passion for building innovative projects using microcontrollers and sensors. With a background in electronics and programming, John enjoys creating practical solutions for everyday challenges using technology.</p>
-            <p class="mt-4 text-gray-400">Follow John on <a href="https://twitter.com/johndoe" class="text-yellow-300 hover:underline">Twitter</a> and <a href="https://github.com/johndoe" class="text-yellow-300 hover:underline">GitHub</a>.</p>
+            <p class="text-lg text-gray-400">John Doe is an IoT enthusiast with a passion for building innovative projects.</p>
         </div>
 
+        <!-- Back to Projects Button -->
+        <div class="text-center mt-12">
+            <a href="./projects.html" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-600 transition-all duration-300">
+                ← Back to Projects
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -134,20 +102,27 @@ void loop() {
         <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script>
-        gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
-        gsap.from("iframe", { duration: 1.2, opacity: 0, scale: 0.8, ease: "elastic.out(1, 0.5)" });
-        gsap.from("p", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
-        gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
-        gsap.from("footer", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
-        gsap.from("img", { duration: 1, opacity: 0, scale: 0.8, stagger: 0.2, ease: "power3.out" });
+        // Sidebar Toggle
+        const toggleSidebar = document.getElementById("toggleSidebar");
+        const sidebar = document.getElementById("sidebar");
 
-        function toggleReplyForm(replyId) {
-            const replyForm = document.getElementById(replyId);
-            replyForm.classList.toggle('hidden');
-        }
+        toggleSidebar.addEventListener("click", () => {
+            if (sidebar.classList.contains("-translate-x-64")) {
+                sidebar.classList.remove("-translate-x-64");
+                gsap.to(sidebar, { x: 0, duration: 0.3 });
+            } else {
+                gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll("aside a").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+            });
+        });
     </script>
-
 </body>
 </html>
