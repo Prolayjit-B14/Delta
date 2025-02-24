@@ -22,7 +22,7 @@
     <!-- Search and Filter Section -->
     <section class="max-w-6xl mx-auto py-20 mt-16">
         <h2 class="text-5xl font-bold text-center mb-12 animate-fade-in">Explore IoT Projects</h2>
-        
+
         <!-- Search Bar and Filter -->
         <div class="flex justify-between items-center mb-8">
             <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
@@ -31,43 +31,19 @@
             <div class="ml-4 w-full sm:w-1/4">
                 <select id="authorFilter" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-2 focus:ring-yellow-300">
                     <option value="">Filter by Author</option>
-                    <option value="John Doe">John Doe</option>
-                    <option value="Jane Smith">Jane Smith</option>
-                    <option value="Alex Johnson">Alex Johnson</option>
                 </select>
             </div>
         </div>
 
         <!-- Project Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projectGrid">
-            <!-- Example Project Card -->
-            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-700 project-card" data-title="Smart Home Automation" data-author="John Doe">
-                <img src="assets/project-thumbnail.jpg" alt="Project Thumbnail" class="w-full h-40 object-cover rounded-lg mb-6">
-                <h3 class="text-2xl font-semibold mb-2">Smart Home Automation</h3>
-                <p class="text-sm mb-4">A smart home system that automates various tasks using IoT devices.</p>
-                <a href="project1.html" class="text-yellow-400 hover:text-yellow-500 font-semibold">View Project</a>
-            </div>
-
-            <!-- Example Project Card -->
-            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-700 project-card" data-title="Weather Station" data-author="Jane Smith">
-                <img src="assets/project-thumbnail2.jpg" alt="Project Thumbnail" class="w-full h-40 object-cover rounded-lg mb-6">
-                <h3 class="text-2xl font-semibold mb-2">Weather Station</h3>
-                <p class="text-sm mb-4">An IoT-based weather station to monitor temperature, humidity, and pressure.</p>
-                <a href="project2.html" class="text-yellow-400 hover:text-yellow-500 font-semibold">View Project</a>
-            </div>
-
-            <!-- Example Project Card -->
-            <div class="bg-gray-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-700 project-card" data-title="Smart Plant Monitoring" data-author="Alex Johnson">
-                <img src="assets/project-thumbnail3.jpg" alt="Project Thumbnail" class="w-full h-40 object-cover rounded-lg mb-6">
-                <h3 class="text-2xl font-semibold mb-2">Smart Plant Monitoring</h3>
-                <p class="text-sm mb-4">A project that monitors soil moisture, temperature, and light for plant care.</p>
-                <a href="project3.html" class="text-yellow-400 hover:text-yellow-500 font-semibold">View Project</a>
-            </div>
         </div>
 
         <!-- Load More Button -->
         <div class="text-center mt-12">
-            <button class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg text-lg font-bold hover:bg-yellow-500 transition-all duration-300">Load More Projects</button>
+            <button id="loadMoreBtn" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg text-lg font-bold hover:bg-yellow-500 transition-all duration-300">
+                Load More Projects
+            </button>
         </div>
     </section>
 
@@ -77,41 +53,89 @@
     </footer>
 
     <script>
-        gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
-        gsap.from(".grid", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
-        gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
-        gsap.from("footer", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
-
-        // Search Filter Functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        const projectGrid = document.getElementById("projectGrid");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
         const searchInput = document.getElementById("searchInput");
         const authorFilter = document.getElementById("authorFilter");
-        const projectGrid = document.getElementById("projectGrid");
 
-        // Event listener for search input
-        searchInput.addEventListener("input", filterProjects);
-        authorFilter.addEventListener("change", filterProjects);
+        const projects = [
+            { title: "Smart Home Automation", author: "John Doe", image: "assets/project-thumbnail.jpg", description: "A smart home system that automates various tasks using IoT devices.", link: "project1.html" },
+            { title: "Weather Station", author: "Jane Smith", image: "assets/project-thumbnail2.jpg", description: "An IoT-based weather station to monitor temperature, humidity, and pressure.", link: "project2.html" },
+            { title: "Smart Plant Monitoring", author: "Alex Johnson", image: "assets/project-thumbnail3.jpg", description: "A project that monitors soil moisture, temperature, and light for plant care.", link: "project3.html" },
+            { title: "AI-Based Traffic Control", author: "Michael Lee", image: "assets/project-thumbnail4.jpg", description: "An AI-driven system to optimize traffic flow using real-time data.", link: "project4.html" },
+            { title: "IoT Smaock", author: "mily Davis", image: "assets/project-thubnail5.jpg", description: "A secure IoT-based smart lock system with mobile app integration.", link: "project5.html" },
+            { title: "I Smart Lock", author: "y Davis", image: "assets/project-thubnail5.jpg", description: "A secure IoT-based smart lok system withmobile app integration.", link: "project6.html" },
+            { title: "oT Smart Lock", author: "Em Davis", image: "assets/project-thbnail.jpg", description: "A secure IoT-ased smart lock ystem with mobile app integration.", link: "project7.html" },
+            { title: "IoT Smart Lck", author: "Emly Davis", image: "assets/project-thumnail5.jpg", description: "A secure IoT-based smart lock system with mobile app integration.", link: "project8.html" },
+            { title: "IoT Smrt Lock", author: "Emily Davis", image: "assets/project-thumbnai5.jpg", description: "A secure IoT-based smart lock sstem with mobile app integration.", link: "project9.html" },
+            { title: "IoT Sart Lock", author: "Emil Davis", image: "assets/project-thumbnil5.jpg", description: "A secure IoT-basd smart lock system with obile app integration.", link: "project10.html" },
+        ];
+
+
+        let projectsLoaded = 0;
+        const projectsPerLoad = 3;
+
+        function loadProjects() {
+            let newProjects = "";
+            for (let i = projectsLoaded; i < projectsLoaded + projectsPerLoad && i < projects.length; i++) {
+                const project = projects[i];
+                newProjects += `
+                    <div class="bg-gray-800 p-6 rounded-2xl shadow-xl hover:scale-105 hover:bg-gray-700 project-card"
+                        data-title="${project.title}" data-author="${project.author}">
+                        <img src="${project.image}" alt="Project Thumbnail" class="w-full h-40 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-semibold mb-2">${project.title}</h3>
+                        <p class="text-sm mb-4">${project.description}</p>
+                        <a href="${project.link}" class="text-yellow-400 hover:text-yellow-500 font-semibold">View Project</a>
+                    </div>
+                `;
+            }
+            projectsLoaded += projectsPerLoad;
+            projectGrid.innerHTML += newProjects;
+            filterProjects();
+
+            if (projectsLoaded >= projects.length) {
+                loadMoreBtn.style.display = "none";
+            }
+        }
+
+        function populateAuthors() {
+            let authors = [...new Set(projects.map(p => p.author))];
+            authors.forEach(author => {
+                const option = document.createElement("option");
+                option.value = author;
+                option.textContent = author;
+                authorFilter.appendChild(option);
+            });
+        }
 
         function filterProjects() {
             const searchText = searchInput.value.toLowerCase();
-            const authorText = authorFilter.value;
+            const authorText = authorFilter.value.toLowerCase();
 
-            // Filter projects based on search and author
-            const projectCards = document.querySelectorAll(".project-card");
-            projectCards.forEach((card) => {
+            document.querySelectorAll(".project-card").forEach((card) => {
                 const title = card.getAttribute("data-title").toLowerCase();
-                const author = card.getAttribute("data-author");
-
+                const author = card.getAttribute("data-author").toLowerCase();
                 const matchesSearch = title.includes(searchText);
                 const matchesAuthor = authorText === "" || author === authorText;
 
-                // Show or hide the project card based on filters
-                if (matchesSearch && matchesAuthor) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
+                card.style.display = matchesSearch && matchesAuthor ? "block" : "none";
             });
         }
+
+        loadMoreBtn.addEventListener("click", loadProjects);
+        searchInput.addEventListener("input", filterProjects);
+        authorFilter.addEventListener("change", filterProjects);
+
+        populateAuthors();
+        loadProjects();
+    });
+
+    gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
+    gsap.from(".grid", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
+    gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
+    gsap.from("footer", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
     </script>
+
 </body>
 </html>
