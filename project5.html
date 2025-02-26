@@ -42,17 +42,17 @@
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Coordinated Traffic System</h2>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Dual LED Blinking Circuit</h2>
         <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Ankan Bhowmik</a></strong></p>
-        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 19, 2025</p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 25, 2025</p>
         
     <!-- Sections -->
     <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
-            The Coordinated Traffic Light System aims to synchronize traffic lights at successive intersections to improve traffic flow and reduce congestion. By ensuring that traffic lights show red or green simultaneously, vehicles can move more efficiently through multiple intersections without unnecessary stops. This system is particularly useful in urban areas with high traffic density.
+            A dual LED blinker circuit uses transistors as switches to alternate the blinking of two LEDs. The transistors control the current flow to each LED, allowing them to blink in a coordinated manner. This setup is commonly used in signal indicators and decorative lighting.
         </p>
-    </div> 
+    </div>
 
     <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
     <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
@@ -60,12 +60,14 @@
     </h3>
 
     <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li>DHT11 Temperature & Humidity Sensor</li>
-        <li>ESP8266 Wi-Fi Module</li>
-        <li>Arduino Uno or NodeMCU</li>
-        <li>Resistors (1kΩ, 10kΩ)</li>
-        <li>LEDs (Red, Green)</li>
-        <li>Jumper Wires & Breadboard</li>
+        <li>Arduino Uno R3</li>
+        <li>2 x NPN Transistors (BJT)</li>
+        <li>Red LED</li>
+        <li>Blue LED</li>
+        <li>4 x 1 kΩ Resistor</li>
+        <li>Breadboard</li>
+        <li>Jumper wires</li>
+        <li>Power supply</li>
     </ul>
 </div>
 
@@ -73,22 +75,29 @@
     <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
         <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
-        <li>Connect the anode (long leg) of the Red LEDs to digital pin 9 on the Arduino with a Resistor (1kΩ).</li>
-        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-        <li>Connect the anode (long leg) of the Green LEDs to digital pin 8 on the Arduino with a Resistor (1kΩ).</li>
-        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-        <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
-        <li>Insert the Code for the system to function.</li>
+            <li>Connect the Arduino GND pin to the breadboard ground rail.</li>
+            <li>Connect the Arduino 5V pin to the breadboard power rail.</li>
+            <li>Place the red LED on the breadboard. Connect the anode (longer leg) to the collector of the first NPN transistor.</li>
+            <li>Connect the cathode (shorter leg) of the red LED to the ground rail.</li>
+            <li>Connect the emitter of the first NPN transistor to the ground rail.</li>
+            <li>Connect a 1kΩ resistor between the base of the first NPN transistor and digital pin 6 on the Arduino.</li>
+            <li>Place the blue LED on the breadboard. Connect the anode (longer leg) to the collector of the second NPN transistor.</li>
+            <li>Connect the cathode (shorter leg) of the blue LED to the ground rail.</li>
+            <li>Connect the emitter of the second NPN transistor to the ground rail.</li>
+            <li>Connect a 1kΩ resistor between the base of the second NPN transistor and digital pin 3 on the Arduino.</li>
+            <li>Connect a 1kΩ resistor between the 5V rail and the collector of the first NPN transistor.</li>
+            <li>Connect a 1kΩ resistor between the 5V rail and the collector of the second NPN transistor.</li>
+        </ul>
     </div>
 
     <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
-        <img src="https://lh4.googleusercontent.com/-Z5MXtSuHrmO-QexwH7L9W6M_oph0kOkcRquAcF2o4d9HMrt1kFtEMHzMJEKzrb1sAzIYpLJGNtLLNj2yujr1qUi1dndg_raI-rAM_TIcCoWOFsJndvLVGVZqszIiOa-aA=w1280" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+        <img src="https://lh3.googleusercontent.com/WA5WiKkLN7e1h1Fb3OUhy1jStrDuSiQlfMIROVSVDkFe2fo4Cw23yYGinRX2WWa_Ud2iHHyeAFR7BAaTGcNkooW2WPIhnPcL-rV--4LH0pBQpuJBfi-ozstGCXAZBWV5CQ=w1280" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
-        <img src="https://lh3.googleusercontent.com/jHYIeZ39zGyZFwl1Tnd9embQEZ1QG8cUb2rSYLJNibq6S75ySu4BZYfN2rL_z0LNWFeU7Y8VokP2ggY2L82aAoVO1yVOqMnPBdus_yEZTeG5keqagVpDKY_7iOWbLNQTBw=w1280" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        <img src="https://lh4.googleusercontent.com/Q7qAq47LHIEuLiAzKps8eOIHWwM2c4agGTmGJQl46pEAWT343BMVvSzADAdzLwV0N1SgnyPJhqucBTho3mpRC9otFdQWkxDY9DTCoIqv3OaWp_QLQNx6to76Rvqqlso1yw=w1280" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <!-- Arduino Code Section -->
@@ -100,21 +109,15 @@
 
 void setup()
 {
-    pinMode(9, OUTPUT);
-    pinMode(8, OUTPUT);
+    pinMode(6, OUTPUT);
 }
 
 void loop()
 {
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-
-//adjust delay according to your need
-
+    digitalWrite(6, HIGH);
+    delay(1000); // Wait for 1000 millisecond(s)
+    digitalWrite(6, LOW);
+    delay(1000); // Wait for 1000 millisecond(s)
 }
             </code></pre>
         </div>

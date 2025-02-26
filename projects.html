@@ -59,19 +59,25 @@
         const authorFilter = document.getElementById("authorFilter");
 
         const projects = [
-            { title: "Smart Home Automation", author: "Ankan Bhowmik", image: "assets/project-thumbnail.jpg", description: "A smart home system that automates various tasks using IoT devices.", link: "project1.html" },
-            { title: "Weather Station", author: "Jane Smith", image: "assets/project-thumbnail2.jpg", description: "An IoT-based weather station to monitor temperature, humidity, and pressure.", link: "project2.html" },
-            { title: "Weather Station", author: "Jane Smith", image: "assets/project-thumbnail2.jpg", description: "An IoT-based weather station to monitor temperature, humidity, and pressure.", link: "project2.html" },
-            { title: "Smart Plant Monitoring", author: "Alex Johnson", image: "assets/project-thumbnail3.jpg", description: "A project that monitors soil moisture, temperature, and light for plant care.", link: "project3.html" }
+            { title: "Coordinated Traffic System", author: "Ankan Bhowmik", image: "assets/project-thumbnail.jpg", description: "Coordinated Traffic light system using Arduino UNO R3", link: "project1.html" },
+            { title: "Basic of Breadboard", author: "Arghya Roy", image: "assets/project-thumbnail2.jpg", description: "Basic Concepts of Making Circuit by Breadboard", link: "project2.html" },
+            { title: "LED Controller", author: "Arghya Roy", image: "assets/project-thumbnail2.jpg", description: "LED Controller by Arduino Uno R3", link: "project3.html" },
+            { title: "Automatic Light Control", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Automatic Light Control using LDR and Arduino UNO R3", link: "project4.html" },
+            { title: "Dual LED Blinking Circuit", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Dual LED Blinking Circuit using Arduino UNO R3 Transistors as a switch", link: "project5.html" },
+            { title: "LCD Display", author: "Arghya Roy", image: "assets/project-thumbnail3.jpg", description: "Interface a 16x2 LCD with an Arduino Uno using a breadboard and a potentiometer", link: "project6.html" },
+            { title: "Smart Home Automation", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Smart Home Automation using PIR Motion Sensors, Temperature Sensors and Arduino UNO R3", link: "project7.html" }
         ];
 
+        let filteredProjects = projects; // Holds filtered projects
         let projectsLoaded = 0;
         const projectsPerLoad = 3;
 
+        // Load projects and render them
         function loadProjects() {
             let newProjects = "";
-            for (let i = projectsLoaded; i < projectsLoaded + projectsPerLoad && i < projects.length; i++) {
-                const project = projects[i];
+            const projectsToDisplay = filteredProjects.slice(projectsLoaded, projectsLoaded + projectsPerLoad);
+
+            projectsToDisplay.forEach(project => {
                 newProjects += `
                     <div class="bg-gray-100 p-6 rounded-2xl shadow-md hover:scale-105 hover:bg-gray-200 project-card"
                         data-title="${project.title}" data-author="${project.author}">
@@ -81,16 +87,20 @@
                         <a href="${project.link}" class="text-blue-500 hover:text-blue-600 font-semibold">View Project</a>
                     </div>
                 `;
-            }
+            });
+
             projectsLoaded += projectsPerLoad;
             projectGrid.innerHTML += newProjects;
-            filterProjects();
 
-            if (projectsLoaded >= projects.length) {
-                loadMoreBtn.style.display = "none";
+            // Show or hide the load more button
+            if (projectsLoaded >= filteredProjects.length) {
+                loadMoreBtn.style.display = "none";  // Hide button if all projects are loaded
+            } else {
+                loadMoreBtn.style.display = "inline-block";  // Show button if there are more projects
             }
         }
 
+        // Populate authors filter dropdown
         function populateAuthors() {
             let authors = [...new Set(projects.map(p => p.author))];
             authors.forEach(author => {
@@ -101,28 +111,37 @@
             });
         }
 
+        // Filter projects based on search text and author filter
         function filterProjects() {
             const searchText = searchInput.value.toLowerCase();
             const authorText = authorFilter.value.toLowerCase();
 
-            document.querySelectorAll(".project-card").forEach((card) => {
-                const title = card.getAttribute("data-title").toLowerCase();
-                const author = card.getAttribute("data-author").toLowerCase();
-                const matchesSearch = title.includes(searchText);
-                const matchesAuthor = authorText === "" || author === authorText;
-
-                card.style.display = matchesSearch && matchesAuthor ? "block" : "none";
+            // Filter projects based on search and author filter
+            filteredProjects = projects.filter(project => {
+                const matchesSearch = project.title.toLowerCase().includes(searchText);
+                const matchesAuthor = authorText === "" || project.author.toLowerCase().includes(authorText);
+                return matchesSearch && matchesAuthor;
             });
+
+            // Reset loaded projects and reload with filtered data
+            projectsLoaded = 0;
+            projectGrid.innerHTML = ""; // Clear the grid
+            loadProjects(); // Load the first batch of filtered projects
         }
 
-        loadMoreBtn.addEventListener("click", loadProjects);
+        // Event listeners for search input and author filter
         searchInput.addEventListener("input", filterProjects);
         authorFilter.addEventListener("change", filterProjects);
 
+        // Initial load
         populateAuthors();
         loadProjects();
+
+        // Load More functionality
+        loadMoreBtn.addEventListener("click", loadProjects);
     });
 
+    // GSAP animations
     gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
     gsap.from(".grid", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
     gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });

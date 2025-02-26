@@ -42,17 +42,19 @@
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Coordinated Traffic System</h2>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Automatic Light Control using LDR</h2>
         <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Ankan Bhowmik</a></strong></p>
-        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 19, 2025</p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 23, 2025</p>
         
     <!-- Sections -->
     <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
-            The Coordinated Traffic Light System aims to synchronize traffic lights at successive intersections to improve traffic flow and reduce congestion. By ensuring that traffic lights show red or green simultaneously, vehicles can move more efficiently through multiple intersections without unnecessary stops. This system is particularly useful in urban areas with high traffic density.
+        An automatic light control system can be implemented using an LDR (light-dependent resistor) and Arduino Uno R3. The LDR senses ambient light levels and sends the data to the Arduino, which then controls a connected light. When the ambient light level drops below a certain threshold, the Arduino turns the light on, and when the light level rises above the threshold, it turns the light off.
+
+        Practical Example: This system can be used for streetlights that automatically turn on at dusk and off at dawn, ensuring energy efficiency and reducing the need for manual control.
         </p>
-    </div> 
+    </div>
 
     <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
     <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
@@ -60,12 +62,14 @@
     </h3>
 
     <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li>DHT11 Temperature & Humidity Sensor</li>
-        <li>ESP8266 Wi-Fi Module</li>
-        <li>Arduino Uno or NodeMCU</li>
-        <li>Resistors (1kΩ, 10kΩ)</li>
-        <li>LEDs (Red, Green)</li>
-        <li>Jumper Wires & Breadboard</li>
+        <li>Arduino Uno R3</li>
+        <li>LED (Red)</li>
+        <li>1 kΩ Resistor</li>
+        <li>500 Ω Resistor</li>
+        <li>Photoresistor (LDR)</li>
+        <li>Breadboard</li>
+        <li>Jumper wires</li>
+        <li>Power supply</li>
     </ul>
 </div>
 
@@ -73,22 +77,24 @@
     <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
         <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
-        <li>Connect the anode (long leg) of the Red LEDs to digital pin 9 on the Arduino with a Resistor (1kΩ).</li>
-        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-        <li>Connect the anode (long leg) of the Green LEDs to digital pin 8 on the Arduino with a Resistor (1kΩ).</li>
-        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-        <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
-        <li>Insert the Code for the system to function.</li>
+            <li>Connect the Arduino GND pin to the breadboard ground rail.</li>
+            <li>Connect the Arduino 5V pin to the breadboard power rail.</li>
+            <li>Place the LDR on the breadboard and connect one leg to the 5V rail.</li>
+            <li>Connect a 1 kΩ resistor from the other leg of the LDR to the ground rail.</li>
+            <li>Connect the junction of the LDR and the resistor to an analog input pin (A0) on the Arduino.</li>
+            <li>Connect the positive leg (anode) of the LED to a digital pin (e.g., 6) on the Arduino.</li>
+            <li>Connect the negative leg (cathode) of the LED to the ground rail on the breadboard.</li>
+        </ul>
     </div>
 
     <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
-        <img src="https://lh4.googleusercontent.com/-Z5MXtSuHrmO-QexwH7L9W6M_oph0kOkcRquAcF2o4d9HMrt1kFtEMHzMJEKzrb1sAzIYpLJGNtLLNj2yujr1qUi1dndg_raI-rAM_TIcCoWOFsJndvLVGVZqszIiOa-aA=w1280" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+        <img src="https://lh3.googleusercontent.com/FyF1Lsjo7XeKTOUkvFYUx-uQPDM7sVKBYuTWWeYZ5izLojAnjkFFu3jsLU01pZt1p89YSDhzl2oxgf53SAKr8OjsUhtJJdDMh5qrKcXQb9VHpoPX8ASiNSscz0yMio8MNg=w1280" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
-        <img src="https://lh3.googleusercontent.com/jHYIeZ39zGyZFwl1Tnd9embQEZ1QG8cUb2rSYLJNibq6S75ySu4BZYfN2rL_z0LNWFeU7Y8VokP2ggY2L82aAoVO1yVOqMnPBdus_yEZTeG5keqagVpDKY_7iOWbLNQTBw=w1280" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        <img src="https://lh5.googleusercontent.com/R61sWTeYdYxET3KsJZPK0d701ZK8se3CifUXLOAxUK8GmwUA0eZ31h-q_VexPo47VE16ZkZ-jsrHULFflQ1ox4rmREx7jYM_D10U9gv8QPb9TpDEWnt_CdQ6k6XKYRgz6g=w1280" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <!-- Arduino Code Section -->
@@ -98,23 +104,30 @@
             <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
 // C++ code
 
+#define relay 10
+int LED = 9;
+int LDR = A0;
+
 void setup()
 {
-    pinMode(9, OUTPUT);
-    pinMode(8, OUTPUT);
+pinMode(LED, OUTPUT);
+pinMode(relay, OUTPUT);
+pinMode(LDR, INPUT);
 }
 
 void loop()
 {
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-
-//adjust delay according to your need
-
+int LDRValue = analogRead(LDR);
+if (LDRValue <=200) //Adjust the range for LDRValue
+{
+digitalWrite(LED, HIGH);
+digitalWrite(relay, HIGH);
+}
+else
+{
+digitalWrite(LED, LOW);
+digitalWrite(relay, LOW);
+}
 }
             </code></pre>
         </div>
