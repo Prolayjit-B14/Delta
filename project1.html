@@ -9,135 +9,135 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-white text-gray-900 font-sans">
     
     <!-- Navbar -->
-    <nav class="bg-gray-800 text-white p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
+    <nav class="bg-gray-200 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
         <h1 class="text-3xl font-extrabold tracking-wide">IoT Weather Station</h1>
         <div>
-            <a href="index.html" class="mx-4 hover:text-yellow-300 transition-all duration-300">Home</a>
-            <a href="projects.html" class="mx-4 hover:text-yellow-300 transition-all duration-300">Projects</a>
+            <a href="index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
+            <a href="projects.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Projects</a>
+            <a href="components.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Components</a>
         </div>
     </nav>
 
     <!-- Sidebar Toggle Button -->
-    <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-yellow-600 transition-all">
+    <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg font-bold shadow-md hover:bg-blue-600 transition-all">
         ☰ Menu
     </button>
 
     <!-- Sidebar Navigation -->
-    <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-gray-800 text-white transform -translate-x-64 transition-transform duration-300 shadow-xl">
-        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-yellow-400">Navigation</h2>
+    <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-gray-200 text-gray-900 transform -translate-x-64 transition-transform duration-300 shadow-xl">
+        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-blue-600">Navigation</h2>
         <ul class="space-y-4 text-lg pl-6">
-            <li><a href="#concept" class="block hover:text-yellow-300 transition-all">🔹 Concept</a></li>
-            <li><a href="#components" class="block hover:text-yellow-300 transition-all">🔹 Components</a></li>
-            <li><a href="#connections" class="block hover:text-yellow-300 transition-all">🔹 Connections</a></li>
-            <li><a href="#circuit-diagram" class="block hover:text-yellow-300 transition-all">🔹 Circuit Diagram</a></li>
-            <li><a href="#prototype-overview" class="block hover:text-yellow-300 transition-all">🔹 Prototype</a></li>
-            <li><a href="#simulation-model" class="block hover:text-yellow-300 transition-all">🔹 Simulation</a></li>
-            <li><a href="#author" class="block hover:text-yellow-300 transition-all">🔹 Author</a></li>
+            <li><a href="#concept" class="block hover:text-blue-500 transition-all">🔹 Concept</a></li>
+            <li><a href="#components" class="block hover:text-blue-500 transition-all">🔹 Components</a></li>
+            <li><a href="#connections" class="block hover:text-blue-500 transition-all">🔹 Connections</a></li>
+            <li><a href="#circuit-diagram" class="block hover:text-blue-500 transition-all">🔹 Circuit Diagram</a></li>
+            <li><a href="#prototype-overview" class="block hover:text-blue-500 transition-all">🔹 Prototype</a></li>
+            <li><a href="#simulation-model" class="block hover:text-blue-500 transition-all">🔹 Simulation</a></li>
+            <li><a href="#author" class="block hover:text-blue-500 transition-all">🔹 Author</a></li>
         </ul>
     </aside>
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-yellow-400">IoT Weather Station</h2>
-        <p class="text-center text-lg text-gray-400 mb-6">By <strong><a href="#author" class="text-yellow-300 hover:underline">Ankan Bhowmik</a></strong></p>
-        <p class="text-center text-md text-gray-500 mb-6">📅 Post Date: February 25, 2025</p>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">IoT Weather Station</h2>
+        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Ankan Bhowmik</a></strong></p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: February 25, 2025</p>
         
-        <!-- Sections -->
-        <div id="concept" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Concept</h3>
-            <p class="text-gray-300 text-lg leading-relaxed text-center">
-                The IoT Weather Station collects real-time environmental data using temperature, humidity, and pressure sensors. It transmits data to a cloud server for remote monitoring and analysis.
-            </p>
-        </div>
+    <!-- Sections -->
+    <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
+        <p class="text-gray-700 text-lg leading-relaxed text-center">
+            The IoT Weather Station collects real-time environmental data using temperature, humidity, and pressure sensors. It transmits data to a cloud server for remote monitoring and analysis.
+        </p>
+    </div>
 
-        <div id="components" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">
-                <a href="components.html" class="hover:underline">Components Required</a>
-            </h3>
-    
-            <ul class="list-disc text-gray-300 text-lg mx-auto max-w-lg">
-                <li>DHT11 Temperature & Humidity Sensor</li>
-                <li>ESP8266 Wi-Fi Module</li>
-                <li>Arduino Uno or NodeMCU</li>
-                <li>Resistors (1kΩ, 10kΩ)</li>
-                <li>LEDs (Red, Green)</li>
-                <li>Jumper Wires & Breadboard</li>
-            </ul>
-        </div>
+    <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
+            <a href="components.html" class="hover:underline text-gray-800">Components Required</a>
+        </h3>
 
-        <div id="connections" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Connections</h3>
-            <ul class="list-disc text-gray-300 text-lg mx-auto max-w-lg">
-                <li>Connect the anode (long leg) of the Red LED to digital pin 9 on the Arduino with a 1kΩ resistor.</li>
-                <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-                <li>Connect the anode (long leg) of the Green LED to digital pin 8 on the Arduino with a 1kΩ resistor.</li>
-                <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
-                <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
-            </ul>
-        </div>
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
+            <li>DHT11 Temperature & Humidity Sensor</li>
+            <li>ESP8266 Wi-Fi Module</li>
+            <li>Arduino Uno or NodeMCU</li>
+            <li>Resistors (1kΩ, 10kΩ)</li>
+            <li>LEDs (Red, Green)</li>
+            <li>Jumper Wires & Breadboard</li>
+        </ul>
+    </div>
 
-        <div id="circuit-diagram" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Circuit Diagram</h3>
-            <img src="c:\Users\PROLAYJIT BISWAS\AppData\Local\Packages\Microsoft.ScreenSketch_8wekyb3d8bbwe\TempState\Snips\Screenshot 2025-02-25 000426.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
-        </div>
+    <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
+            <li>Connect the anode (long leg) of the Red LED to digital pin 9 on the Arduino with a 1kΩ resistor.</li>
+            <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+            <li>Connect the anode (long leg) of the Green LED to digital pin 8 on the Arduino with a 1kΩ resistor.</li>
+            <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+            <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
+        </ul>
+    </div>
 
-        <div id="prototype-overview" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Prototype Overview</h3>
-            <img src="assets/prototype-overview.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
-        </div>
+    <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
+        <img src="assets/circuit-diagram.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+    </div>
 
+    <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
+        <img src="assets/prototype-overview.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+    </div>
 
-        <!-- Arduino Code Section -->
-        <div id="arduino-code" class="mt-10 border-b-2 border-yellow-300 pb-6 text-center">
-            <h3 class="text-3xl text-yellow-300 mb-4">Arduino Code</h3>
-            <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
-                <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
+    <!-- Arduino Code Section -->
+    <div id="arduino-code" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4">Arduino Code</h3>
+        <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
+            <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
 // Sample Arduino code for IoT Weather Station
 
 void setup() {
-    pinMode(9, OUTPUT);
-    pinMode(8, OUTPUT);
+pinMode(9, OUTPUT);
+pinMode(8, OUTPUT);
 }
 
 void loop() {
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(30000); // Wait for 30 seconds
+digitalWrite(9, HIGH);
+digitalWrite(8, LOW);
+delay(30000); // Wait for 30 seconds
 
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    delay(30000); // Wait for 30 seconds
+digitalWrite(8, HIGH);
+digitalWrite(9, LOW);
+delay(30000); // Wait for 30 seconds
 }
-                </code></pre>
-            </div>
+            </code></pre>
         </div>
+    </div>
 
-        <div id="simulation-model" class="mt-10 border-b-2 border-yellow-300 pb-6">
-            <h3 class="text-3xl text-center text-yellow-300 mb-4">Simulation Model</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
-        </div>
+    <div id="simulation-model" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Simulation Model</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
+    </div>
 
-        <!-- Author Section -->
-        <div id="author" class="mt-12 text-center">
-            <h3 class="text-3xl text-yellow-300 mb-4">About the Author</h3>
-            <p class="text-lg text-gray-400">John Doe is an IoT enthusiast with a passion for building innovative projects.</p>
-        </div>
-    </section>
 
-    <!-- Back to Projects Button -->
-    <div class="text-center mt-12">
-        <a href="./projects.html" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-yellow-600 transition-all duration-300">
-            ← Back to Projects
-        </a>
+    <!-- Author Section -->
+    <div id="author" class="mt-12 text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
+        <p class="text-lg text-gray-600">John Doe is an IoT enthusiast with a passion for building innovative projects.</p>
     </div>
 </section>
 
+<!-- Back to Projects Button -->
+<div class="text-center mt-12">
+    <a href="./projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-700 transition-all duration-300">
+        ← Back to Projects
+    </a>
+</div>
+</section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-6 mt-16 shadow-inner">
+    <footer class="bg-gray-200 text-gray-900 text-center p-6 mt-16 shadow-inner">
         <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>
     </footer>
 
@@ -177,8 +177,5 @@ void loop() {
             });
         });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    
 </body>
 </html>

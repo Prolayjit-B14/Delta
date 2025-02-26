@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - IoT Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    
+    <!-- Navbar -->
+    <nav class="bg-gray-100 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
+        <h1 class="text-3xl font-extrabold tracking-wide">IoT Components</h1>
+        <div>
+            <a href="index.html" class="mx-4 hover:text-blue-500 transition-all duration-300">Home</a>
+            <a href="projects.html" class="mx-4 hover:text-blue-500 transition-all duration-300">Projects</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Toggle Button -->
+    <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg font-bold shadow-md hover:bg-blue-600 transition-all">
+        ☰ Menu
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-gray-200 text-gray-900 transform -translate-x-64 transition-transform duration-300 shadow-xl">
+        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-blue-600">Navigation</h2>
+        <ul class="space-y-4 text-lg pl-6">
+            <li><a href="#sensors" class="block hover:text-blue-500 transition-all">🔹 Sensors</a></li>
+            <li><a href="#microcontrollers" class="block hover:text-blue-500 transition-all">🔹 Microcontrollers</a></li>
+            <li><a href="#communication" class="block hover:text-blue-500 transition-all">🔹 Communication Modules</a></li>
+            <li><a href="#power" class="block hover:text-blue-500 transition-all">🔹 Power Supply</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="max-w-5xl mx-auto pt-24 pb-12">
+        <h2 class="text-5xl font-bold text-center mb-6 text-blue-600">IoT Components</h2>
+        <p class="text-center text-lg text-gray-600 mb-10">Essential hardware components used in IoT projects.</p>
+
+        <!-- Sensors Section -->
+        <div id="sensors" class="mt-10 border-b-2 border-blue-400 pb-6">
+            <h3 class="text-3xl text-center text-blue-500 mb-4">🔹 Sensors</h3>
+            <p class="text-gray-700 text-lg leading-relaxed text-center">
+                Sensors play a crucial role in IoT projects, collecting real-time environmental data. Common IoT sensors include:
+            </p>
+            <ul class="mt-4 space-y-3 text-center">
+                <li class="text-gray-600">📍 DHT11/DHT22 – Temperature & Humidity</li>
+                <li class="text-gray-600">📍 BMP180 – Pressure Sensor</li>
+                <li class="text-gray-600">📍 MQ-135 – Air Quality Sensor</li>
+                <li class="text-gray-600">📍 HC-SR04 – Ultrasonic Distance Sensor</li>
+            </ul>
+        </div>
+
+        <!-- Microcontrollers -->
+        <div id="microcontrollers" class="mt-10 border-b-2 border-blue-400 pb-6">
+            <h3 class="text-3xl text-center text-blue-500 mb-4">🔹 Microcontrollers</h3>
+            <p class="text-gray-700 text-lg leading-relaxed text-center">
+                Microcontrollers act as the brain of IoT devices. Popular choices:
+            </p>
+            <ul class="mt-4 space-y-3 text-center">
+                <li class="text-gray-600">🖥️ Arduino Uno – Beginner-friendly</li>
+                <li class="text-gray-600">🖥️ ESP8266 – Wi-Fi enabled</li>
+                <li class="text-gray-600">🖥️ ESP32 – Dual-core & Bluetooth</li>
+                <li class="text-gray-600">🖥️ Raspberry Pi – Advanced IoT projects</li>
+            </ul>
+        </div>
+
+        <!-- Communication Modules -->
+        <div id="communication" class="mt-10 border-b-2 border-blue-400 pb-6">
+            <h3 class="text-3xl text-center text-blue-500 mb-4">🔹 Communication Modules</h3>
+            <p class="text-gray-700 text-lg leading-relaxed text-center">
+                IoT devices rely on communication modules to send and receive data:
+            </p>
+            <ul class="mt-4 space-y-3 text-center">
+                <li class="text-gray-600">📶 ESP8266 – Wi-Fi</li>
+                <li class="text-gray-600">📶 NRF24L01 – Wireless</li>
+                <li class="text-gray-600">📶 LoRa – Long-range communication</li>
+                <li class="text-gray-600">📶 GSM/GPRS – Cellular connectivity</li>
+            </ul>
+        </div>
+
+        <!-- Power Supply -->
+        <div id="power" class="mt-10 pb-6">
+            <h3 class="text-3xl text-center text-blue-500 mb-4">🔹 Power Supply</h3>
+            <p class="text-gray-700 text-lg leading-relaxed text-center">
+                Reliable power sources for IoT devices:
+            </p>
+            <ul class="mt-4 space-y-3 text-center">
+                <li class="text-gray-600">🔋 Li-Ion Batteries</li>
+                <li class="text-gray-600">🔋 Solar Panels</li>
+                <li class="text-gray-600">🔋 DC Power Adapters</li>
+                <li class="text-gray-600">🔋 Power Banks</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Back to Projects Button -->
+    <div class="text-center mt-12">
+        <a href="projects.html" class="bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-600 transition-all duration-300">
+            ← Back to Projects
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-center p-6 mt-16 shadow-inner">
+        <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sidebar Toggle
+        const toggleSidebar = document.getElementById("toggleSidebar");
+        const sidebar = document.getElementById("sidebar");
+
+        toggleSidebar.addEventListener("click", () => {
+            if (sidebar.classList.contains("-translate-x-64")) {
+                gsap.to(sidebar, { x: 0, duration: 0.3 });
+                sidebar.classList.remove("-translate-x-64");
+            } else {
+                gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
+            }
+        });
+
+        // Smooth Scrolling with Navbar Offset
+        document.querySelectorAll('aside a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default jump
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for smooth viewing
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
