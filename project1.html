@@ -141,6 +141,7 @@ void loop() {
         <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         // Sidebar Toggle
         const toggleSidebar = document.getElementById("toggleSidebar");
@@ -154,10 +155,30 @@ void loop() {
                 gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
             }
         });
+
+        // Smooth Scrolling with Navbar Offset
+        document.querySelectorAll('aside a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default jump
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for smooth viewing
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
+    
 </body>
 </html>
-
