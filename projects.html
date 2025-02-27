@@ -58,16 +58,17 @@
         const searchInput = document.getElementById("searchInput");
         const authorFilter = document.getElementById("authorFilter");
 
-        const projects = [
+       const projects = [
             { title: "Coordinated Traffic System", author: "Ankan Bhowmik", image: "https://media.licdn.com/dms/image/v2/D5616AQFIuuk7wuvfSw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735366685156?e=1746057600&v=beta&t=7rbVJEB_Pg3i3ZOqvSde0JbIfNCbGuABeWeBGLuBtbg", description: "Coordinated Traffic light system using Arduino UNO R3", link: "project1.html" },
             { title: "Basic of Breadboard", author: "Arghya Roy", image: "assets/project-thumbnail2.jpg", description: "Basic Concepts of Making Circuit by Breadboard", link: "project2.html" },
             { title: "LED Controller", author: "Arghya Roy", image: "assets/project-thumbnail2.jpg", description: "LED Controller by Arduino Uno R3", link: "project3.html" },
             { title: "Automatic Light Control", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Automatic Light Control using LDR and Arduino UNO R3", link: "project4.html" },
             { title: "Dual LED Blinking Circuit", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Dual LED Blinking Circuit using Arduino UNO R3 Transistors as a switch", link: "project5.html" },
             { title: "LCD Display", author: "Arghya Roy", image: "assets/project-thumbnail3.jpg", description: "Interface a 16x2 LCD with an Arduino Uno using a breadboard and a potentiometer", link: "project6.html" },
-            { title: "Smart Home Automation", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Smart Home Automation using PIR Motion Sensors, Temperature Sensors and Arduino UNO R3", link: "project7.html" }
-            { title: "Smart Agriculture Monitoring", author: "Prolayjit Biswas", image: "assets/project-thumbnail3.jpg", description: "Monitoring System integrates with  Arduino Uno ", link: "project8.html" }
+            { title: "Smart Home Automation", author: "Ankan Bhowmik", image: "assets/project-thumbnail3.jpg", description: "Smart Home Automation using PIR Motion Sensors, Temperature Sensors and Arduino UNO R3", link: "project7.html" },
+            { title: "Smart Agriculture Monitoring", author: "Prolayjit Biswas", image: "assets/project-thumbnail3.jpg", description: "Monitoring System integrates with Arduino Uno", link: "project8.html" }
         ];
+
 
         let filteredProjects = projects; // Holds filtered projects
         let projectsLoaded = 0;
