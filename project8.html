@@ -42,16 +42,16 @@
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">LCD Display</h2>
-        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Arghya Roy</a></strong></p>
-        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: February 15, 2025</p>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Agricultural Monitoring</h2>
+        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Prolayjit Biswas</a></strong></p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: February 23, 2025</p>
         
     <!-- Sections -->
     <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
             The Smart Agriculture Monitoring System is an IoT-based project that integrates Arduino Uno with various sensors and components to monitor and control agricultural conditions in real time. The system collects environmental data, processes it, and provides alerts or automated actions to optimize farming operations.
-          
+        
         </p>
     </div>
 
@@ -77,15 +77,81 @@
     <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
         <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
-            <li><strong>Temperature Sensor</strong> → Arduino <strong>Analog Pin A0</strong></li>
-            <li><strong>Buzzer</strong> → Arduino <strong>Digital Pin 9</strong></li>
-            <li><strong>LCD Display</strong> → Arduino <strong>Digital Pins 7, 8, 9, 10, 11, 12</strong></li>
-            <li><strong>Relay Module</strong> → Arduino <strong>Digital Pin 6</strong></li>
-            <li><strong>DC Motor</strong> → Controlled via the <strong>Relay Module</strong></li>
-            <li><strong>LED Indicators</strong> → Arduino <strong>Digital Pins 3, 4, 5</strong></li>
-        <ul/>
+        
+        <h3><b>1️⃣ Arduino Uno (U1) Connections:</b></h3>
+        <ol>
+            <li><b>5V</b> → VCC of LCD, Soil Moisture Sensor, Temperature Sensor, and Relay Module</li>
+            <li><b>GND</b> → GND of all components</li>
+            <li><b>D3</b> → Red LED (D1) via 220Ω resistor</li>
+            <li><b>D4</b> → Green LED (D3) via 220Ω resistor</li>
+            <li><b>D5</b> → Blue LED (D2) via 220Ω resistor</li>
+            <li><b>D6</b> → Buzzer (Piezo1)</li>
+            <li><b>D7</b> → Relay IN (via NPN transistor)</li>
+            <li><b>A0</b> → Soil Moisture Sensor (SEN1) Output</li>
+            <li><b>A1</b> → Temperature Sensor (TMP36) Output</li>
+            <li><b>A4</b> → LCD SDA (I2C)</li>
+            <li><b>A5</b> → LCD SCL (I2C)</li>
+        </ol>
+    
+        <h3><b>2️⃣ Soil Moisture Sensor (SEN1) Connections:</b></h3>
+        <ul>
+            <li><b>VCC</b> → Arduino 5V</li>
+            <li><b>GND</b> → Arduino GND</li>
+            <li><b>OUT</b> → Arduino A0</li>
+        </ul>
+    
+        <h3><b>3️⃣ Temperature Sensor (TMP36 - U2) Connections:</b></h3>
+        <ul>
+            <li><b>VCC</b> → Arduino 5V</li>
+            <li><b>GND</b> → Arduino GND</li>
+            <li><b>VOUT</b> → Arduino A1</li>
+        </ul>
+    
+        <h3><b>4️⃣ LED Connections:</b></h3>
+        <ul>
+            <li><b>Red LED (D1)</b> → Arduino D3 via 220Ω resistor, GND</li>
+            <li><b>Green LED (D3)</b> → Arduino D4 via 220Ω resistor, GND</li>
+            <li><b>Blue LED (D2)</b> → Arduino D5 via 220Ω resistor, GND</li>
+        </ul>
+    
+        <h3><b>5️⃣ LCD Display (16x2 I2C - U3) Connections:</b></h3>
+        <ul>
+            <li><b>VCC</b> → Arduino 5V</li>
+            <li><b>GND</b> → Arduino GND</li>
+            <li><b>SDA</b> → Arduino A4</li>
+            <li><b>SCL</b> → Arduino A5</li>
+        </ul>
+    
+        <h3><b>6️⃣ Relay Module (K1 - SPDT) Connections:</b></h3>
+        <ul>
+            <li><b>VCC</b> → Arduino 5V</li>
+            <li><b>GND</b> → Arduino GND</li>
+            <li><b>IN</b> → Arduino D7 via NPN transistor</li>
+            <li><b>COM (Common)</b> → Pump VCC</li>
+            <li><b>NO (Normally Open)</b> → Pump Input</li>
+        </ul>
+    
+        <h3><b>7️⃣ NPN Transistor (for Relay Control) Connections:</b></h3>
+        <ul>
+            <li><b>Base</b> → Arduino D7 via 1KΩ resistor</li>
+            <li><b>Collector</b> → Relay IN</li>
+            <li><b>Emitter</b> → GND</li>
+        </ul>
+    
+        <h3><b>8️⃣ DC Motor (Pump - M1) Connections:</b></h3>
+        <ul>
+            <li><b>VCC</b> → Relay COM</li>
+            <li><b>GND</b> → Arduino GND</li>
+            <li><b>Input</b> → Relay NO</li>
+        </ul>
+    
+        <h3><b>9️⃣ Buzzer (PIEZO1) Connections:</b></h3>
+        <ul>
+            <li><b>+ (Anode)</b> → Arduino D6</li>
+            <li><b>- (Cathode)</b> → Arduino GND</li>
+        </ul>
     </div>
-
+    
     <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
         <img src="https://lh4.googleusercontent.com/9bCXgen6B_2Ta0x6AXhMLVjTM2ZyYGsaA_u1Kx8pxRtLaOqBmjvFMa8E5ur6MWfGyecRLn8LmuAXvz-KNyJWi5gHY9jQT5q1zECGbxstWJSGmWAIJ_UaX8IMSe3Z3t_k8Q=w1280" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
@@ -106,102 +172,97 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-// Define pin connections
-const int sensorPin = A0;   // Moisture sensor data pin
-const int sensorPower = 8;  // Moisture sensor power control
-const int tmpPin = A1;      // TMP36 Temperature Sensor
-const int LED1 = 2;         // Red LED (Dry)
-const int LED2 = 3;         // Yellow LED (Moderate)
-const int LED3 = 4;         // Green LED (Wet)
-const int buzzer = 7;       // Buzzer for dry alert
-const int relayPin = 5;     // Relay for water pump
-const int functionGen = 6;  // Function Generator (PWM Output)
+const int sensorPin = A0;  
+const int sensorPower = 8;  
+const int tmpPin = A1;  
+const int LED1 = 2;  
+const int LED2 = 3;  
+const int LED3 = 4;  
+const int buzzer = 7;  
+const int relayControl = 9;  
+const int functionGen = 6;  
 
-// Initialize LCD (I2C Address 0x27)
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// Moisture Sensor Thresholds
-const int dryThreshold = 500;   // Below this → Dry
-const int wetThreshold = 800;   // Above this → Wet
-
-// Buzzer frequencies for a good sound
-const int dryBuzzerFreq = 1000;    // Frequency in Hz (Dry)
-const int wetBuzzerFreq = 2300;    // Frequency for Wet
+const int dryThreshold = 500;
+const int wetThreshold = 800;
 
 void setup() {
-  Serial.begin(9600);
-  lcd.init();
-  lcd.backlight();
+    Serial.begin(9600);
+    lcd.init();
+    lcd.backlight();
 
-  // Set Pin Modes
-  pinMode(LED1, OUTPUT);
-  pinMode(LED2, OUTPUT);
-  pinMode(LED3, OUTPUT);
-  pinMode(buzzer, OUTPUT);
-  pinMode(relayPin, OUTPUT);
-  pinMode(sensorPower, OUTPUT);
-  pinMode(functionGen, OUTPUT);
+    pinMode(LED1, OUTPUT);
+    pinMode(LED2, OUTPUT);
+    pinMode(LED3, OUTPUT);
+    pinMode(buzzer, OUTPUT);
+    pinMode(relayControl, OUTPUT);
+    pinMode(sensorPower, OUTPUT);
+    pinMode(functionGen, OUTPUT);
 }
 
 void loop() {
-  // 🌡️ Read TMP36 Temperature
-  int rawTemp = analogRead(tmpPin);
-  float voltage = rawTemp * (5.0 / 1023.0);  // Convert to voltage
-  float temperature = (voltage - 0.5) * 100;  // Convert to Celsius
+    // 🌡️ Read Temperature
+    int rawTemp = analogRead(tmpPin);
+    float voltage = rawTemp * (5.0 / 1023.0);
+    float temperature = (voltage - 0.5) * 100;
 
-  // 💧 Read Soil Moisture
-  digitalWrite(sensorPower, HIGH);
-  delay(10);
-  int soilMoisture = analogRead(sensorPin);
-  digitalWrite(sensorPower, LOW);
+    // 💧 Read Soil Moisture
+    digitalWrite(sensorPower, HIGH);
+    delay(10);
+    int soilMoisture = analogRead(sensorPin);
+    digitalWrite(sensorPower, LOW);
 
-  // 🖥️ Serial Monitor Debugging
-  Serial.print("Soil Moisture: ");
-  Serial.println(soilMoisture);
-  Serial.print("Temperature: ");
-  Serial.println(temperature);
+    // Debugging in Serial Monitor
+    Serial.print("Soil Moisture: ");
+    Serial.println(soilMoisture);
+    Serial.print("Temperature: ");
+    Serial.println(temperature);
+    
+    // 🖥️ LCD Display Update
+    lcd.clear();
+    lcd.setCursor(0, 0);  
+    lcd.print("Soil:");
+    lcd.print(soilMoisture);
+    lcd.print(" T:");
+    lcd.print(temperature, 1);  
+    lcd.print("C");
 
-  // 📟 LCD Display Update
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Temp: ");
-  lcd.print(temperature);
-  lcd.print("C ");
-  lcd.setCursor(0, 1);
-  lcd.print("Soil: ");
-  lcd.print(soilMoisture);  // Display soil moisture
+    lcd.setCursor(0, 1);
+    
+    if (soilMoisture < dryThreshold) {
+        digitalWrite(LED1, HIGH);  
+        digitalWrite(LED2, LOW);
+        digitalWrite(LED3, LOW);
+        tone(buzzer, 1000, 500);  
+        digitalWrite(relayControl, HIGH);  
 
-  // 🌾 Soil Moisture Classification & Actions
-  if (soilMoisture < dryThreshold) {
-    digitalWrite(LED1, HIGH);  // Dry
-    digitalWrite(LED2, LOW);
-    digitalWrite(LED3, LOW);
-    tone(buzzer, dryBuzzerFreq, 500);  // Play dry alert tone for 500 ms
-    digitalWrite(relayPin, LOW);  // Pump ON (Assuming LOW-ACTIVE Relay)
-    lcd.print(" - DRY - PUMP ON!");
-  } 
-  else if (soilMoisture >= dryThreshold && soilMoisture < wetThreshold) {  // Moderate condition
-    digitalWrite(LED1, LOW);
-    digitalWrite(LED2, HIGH);  // Moderate
-    digitalWrite(LED3, LOW);
-    digitalWrite(buzzer, LOW);  // No buzzer for moderate
-    digitalWrite(relayPin, HIGH);  // Pump OFF
-    lcd.print(" - MODERATE");
-  } 
-  else {
-    digitalWrite(LED1, LOW);
-    digitalWrite(LED2, LOW);
-    digitalWrite(LED3, HIGH);  // Wet
-    tone(buzzer, wetBuzzerFreq, 500);  // Play wet alert tone for 500 ms
-    digitalWrite(relayPin, HIGH);  // Pump OFF
-    lcd.print(" - WET - NO WATER");
-  }
+        lcd.print("PUMP ON  DRY");
+    } 
+    else if (soilMoisture >= dryThreshold && soilMoisture < wetThreshold) {
+        digitalWrite(LED1, LOW);
+        digitalWrite(LED2, HIGH);  
+        digitalWrite(LED3, LOW);
+        noTone(buzzer);  
+        digitalWrite(relayControl, LOW);  
 
-  // 📡 Function Generator Output (PWM)
-  analogWrite(functionGen, map(soilMoisture, 300, 900, 0, 255));
+        lcd.print("PUMP OFF MOD");
+    } 
+    else {
+        digitalWrite(LED1, LOW);
+        digitalWrite(LED2, LOW);
+        digitalWrite(LED3, HIGH);  
+        tone(buzzer, 2300, 500);  
+        digitalWrite(relayControl, LOW);  
 
-  delay(2000);  // Delay before next reading
+        lcd.print("PUMP OFF WET");
+    }
+
+    analogWrite(functionGen, map(soilMoisture, 300, 900, 0, 255));
+
+    delay(2000);
 }
+
 
 
             </code></pre>
