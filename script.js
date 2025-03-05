@@ -27,3 +27,4 @@ gsap.to("#team-section", {
         start: "top 85%",
     }
 });
+
