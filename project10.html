@@ -42,15 +42,16 @@
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Smart Home Automation</h2>
-        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Ankan Bhowmik</a></strong></p>
-        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 19, 2025</p>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Garbage  Monitoring</h2>
+        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Arghya Roy</a></strong></p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: March 5, 2025</p>
         
     <!-- Sections -->
     <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
-        This Smart Home Automation System, developed using Arduino on Tinkercad, automates lighting and fan control based on motion and temperature. The system uses a PIR sensor to detect motion and a TMP36 temperature sensor to monitor ambient temperature, displaying real-time status on an LCD screen. With components like the Arduino Uno R3, SPDT relay module, and a 12V DC motor, it offers a seamless user experience. This project could be further enhanced with IoT integration for remote control and expanded functionality.
+            A Smart Cleaner using Arduino is an automated cleaning system that uses sensors and actuators to detect dust, obstacles, and floor surfaces. It can integrate ultrasonic sensors for navigation, a motorized cleaning mechanism, and IoT connectivity for remote monitoring. This enhances efficiency, making cleaning autonomous and intelligent.
+        
         </p>
     </div>
 
@@ -58,76 +59,57 @@
     <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
         <a href="components.html" class="hover:underline text-gray-800">Components Required</a>
     </h3>
+
     <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li>Arduino Uno R3</li>
-        <li>TMP36 Temperature Sensor</li>
-        <li>PIR Sensor</li>
-        <li>16x2 LCD Display</li>
-        <li>SPDT Relay Module</li>
-        <li>12V DC Motor</li>
-        <li>1 x Green LED</li>
-        <li>3 x 1 kΩ Resistor</li>
-        <li>Breadboard</li>
-        <li>Jumper wires</li>
-        <li>Power supply</li>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components List</title>
+</head>
+<body>
+    <h2>Components List</h2>
+    <ul>
+        <li>Positional Micro Servo (SERV01) - Quantity: 1</li>
+        <li>Arduino Uno R3 (U1) - Quantity: 1</li>
+        <li>PIR Sensor (PIR1) - Quantity: 1</li>
+        <li>LCD 16 x 2 (U2) - Quantity: 1</li>
+        <li>330 Ω Resistor (R1) - Quantity: 1</li>
+        <li>Piezo (PIEZO1) - Quantity: 1</li>
+        <li>10 kΩ Resistor (R2) - Quantity: 1</li>
+        <li>1 Ω Resistor (R3) - Quantity: 1</li>
+        <li>Ultrasonic Distance Sensor (4-pin) (DIST1) - Quantity: 1</li>
+        <li>9V Battery (BAT1) - Quantity: 1</li>
     </ul>
-</div>
+</body>
+</html>
 
     <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
-        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li><strong>LCD Display:</strong>
-            <ul class="list-inside list-disc">
-                <li>Connect RS (Register Select) to digital pin 12 on the Arduino.</li>
-                <li>Connect EN (Enable) to digital pin 11 on the Arduino.</li>
-                <li>Connect D4 to digital pin 5 on the Arduino.</li>
-                <li>Connect D5 to digital pin 4 on the Arduino.</li>
-                <li>Connect D6 to digital pin 3 on the Arduino.</li>
-                <li>Connect D7 to digital pin 2 on the Arduino.</li>
-            </ul>
-            <p>Learn More: <a href="https://example.com" class="text-blue-600 hover:underline">LCD Display-by Arghya Roy</a></p>
-        </li>
-
-        <li><strong>PIR Sensor:</strong>
-            <ul class="list-inside list-disc">
-                <li>Connect the signal pin to analog pin A0 on the Arduino.</li>
-                <li>Connect the VCC pin to the 5V pin on the Arduino.</li>
-                <li>Connect the GND pin to the ground (GND) pin on the Arduino.</li>
-            </ul>
-        </li>
-
-        <li><strong>TMP36 Temperature Sensor:</strong>
-            <ul class="list-inside list-disc">
-                <li>Connect the signal pin to analog pin A1 on the Arduino.</li>
-                <li>Connect the VCC pin to the 5V pin on the Arduino.</li>
-                <li>Connect the GND pin to the ground (GND) pin on the Arduino.</li>
-            </ul>
-        </li>
-
-        <li><strong>Light Control (via SPDT Relay Module):</strong>
-            <ul class="list-inside list-disc">
-                <li>Connect the relay input pin to digital pin 6 on the Arduino.</li>
-                <li>Connect the relay output to the light circuit.</li>
-            </ul>
-        </li>
-
-        <li><strong>Fan Control (via SPDT Relay Module):</strong>
-            <ul class="list-inside list-disc">
-                <li>Connect the relay input pin to digital pin 10 on the Arduino.</li>
-                <li>Connect the relay output to the 12V DC Motor (fan).</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
+        
+        <ul>
+            <li><strong>Power Connections:</strong> Connect the 9V battery's positive terminal to the Vin pin of the Arduino and the negative terminal to the GND. Also, connect the Arduino's 5V and GND to the breadboard.</li>
+            <li><strong>LCD Display (I2C):</strong> Connect its VCC and GND to the breadboard’s 5V and GND. Connect SDA to A4 and SCL to A5 of Arduino.</li>
+            <li><strong>Ultrasonic Sensor (HC-SR04):</strong> VCC and GND go to 5V and GND. Connect Trig to D9 and Echo to D10.</li>
+            <li><strong>PIR Sensor:</strong> Connect VCC to 5V, GND to GND, and Output to D8.</li>
+            <li><strong>Buzzer:</strong> Connect positive to D7 and negative to GND.</li>
+            <li><strong>Servo Motor:</strong> VCC to 5V, GND to GND, and signal to D6.</li>
+            <li><strong>Final Check:</strong> Ensure all connections are secure before uploading the code.</li>
+        </ul>
+    
+    
+    </div>
+    
     <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
-        <img src="assets/homecir.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+        <img src="assets/garbagecir.jpg" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
-        <img src="assets/homemodel.png" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        <img src="assets/garbagemodel.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <!-- Arduino Code Section -->
@@ -137,24 +119,107 @@
             <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
 // C++ code
 
-void setup()
-{
-    pinMode(9, OUTPUT);
-    pinMode(8, OUTPUT);
-}
+#include <LiquidCrystal.h>
+    #include <Servo.h>
+    
+    // Define Pins
+    #define TRIG_PIN 7
+    #define ECHO_PIN 6
+     #define PIR_PIN 3
+    #define SERVO_PIN 9
+    #define BUZZER_PIN 8
+    
+    // LCD (Parallel Connection)
+    LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+    Servo dustbinServo;
+    
+    // Garbage Level Threshold
+    const int garbageFullThreshold = 50;
+    
+    void setup() {
+        pinMode(TRIG_PIN, OUTPUT);
+        pinMode(ECHO_PIN, INPUT);
+        pinMode(PIR_PIN, INPUT);
+        pinMode(BUZZER_PIN, INPUT);
+    
+        Serial.begin(9600); // Debugging
+    
+        dustbinServo.attach(SERVO_PIN);
+        dustbinServo.write(10); // Start at slightly open position
+    
+        lcd.begin(16, 2);
+        lcd.setCursor(0, 0);
+        lcd.print(" Smarto Trashcan ");
+        lcd.setCursor(0, 1);
+        lcd.print(" Waste Monitor ");
+      delay(2000);
+        lcd.clear();
+    }
+    
+    void loop() {
+        // Measure Distance (Ultrasonic)
+        long duration;
+        int distance;
+    
+        digitalWrite(TRIG_PIN, LOW);
+        delayMicroseconds(2);
+        digitalWrite(TRIG_PIN, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(TRIG_PIN, LOW);
+    
+        duration = pulseIn(ECHO_PIN, HIGH);
+        distance = duration * 0.034 / 2;
+    
+        // Display on LCD
+        lcd.setCursor(0, 0);
+        lcd.print("Garbage Level:");
+        lcd.setCursor(0, 1);
+        lcd.print(distance);
+        lcd.print(" cm     "); // Clears extra characters
+    
+        // If Garbage is Full, Ring Buzzer
+        if (distance < garbageFullThreshold) {
+            digitalWrite(BUZZER_PIN, HIGH);
+            delay(1000);
+            digitalWrite(BUZZER_PIN, LOW);
+        }
+    
+        // PIR Sensor for Lid
+        int motion = digitalRead(PIR_PIN);
+        Serial.print("PIR Motion: "); Serial.println(motion); // Debugging
+    
+        if (motion == HIGH) {
+            Serial.println("Motion detected! Opening lid...");
+            openLid();
+            delay(3000);
+            Serial.println("Closing lid...");
+            closeLid();
+        }
+    
+        delay(500); // Short delay before next loop
+    }
+    
+    // ✅ Fixed Servo Function with Debugging
+    void openLid() {
+        Serial.println("Opening Servo...");
+        for (int pos = 10; pos <= 100; pos += 5) { // Move gradually
+            dustbinServo.write(pos);
+            Serial.print("Servo Position: "); Serial.println(pos);
+            delay(50);
+        }
+    }
+    
+    void closeLid() {
+        Serial.println("Closing Servo...");
+        for (int pos = 100; pos >= 10; pos -= 5) { // Move back gradually
+            dustbinServo.write(pos);
+            Serial.print("Servo Position: "); Serial.println(pos);
+            delay(50);
+        }
+    
 
-void loop()
-{
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
 
-//adjust delay according to your need
 
-}
             </code></pre>
         </div>
     </div>
@@ -168,7 +233,7 @@ void loop()
     <!-- Author Section -->
     <div id="author" class="mt-12 text-center">
         <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
-        <p class="text-lg text-gray-600">Ankan Bhowmik is an IoT enthusiast with a passion for building innovative projects.</p>
+        <p class="text-lg text-gray-600">Arghya Roy is an IoT enthusiast with a passion for building innovative projects.</p>
     </div>
 </section>
 
