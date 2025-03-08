@@ -229,7 +229,18 @@
         <iframe width="560" height="315" src="youtube" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
     </div>
 
-
+    <body class="bg-white text-gray-900 font-sans p-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-xl font-bold mb-4">Leave a Comment</h2>
+            <div class="bg-gray-100 p-4 rounded-lg shadow flex items-center space-x-2">
+                    <input type="file" id="profilePic" accept="image/*" class="w-12 h-12 border rounded-full">
+                    <input type="text" id="username" class="p-2 border rounded" placeholder="Your Name" required>
+                    <textarea id="commentInput" class="p-2 border rounded flex-1" placeholder="Write a comment..."></textarea>
+                    <button onclick="addComment()" class="bg-blue-500 text-white px-4 py-2 rounded">Post</button>
+                </div>
+            <div id="commentList" class="mt-6 space-y-4"></div>
+        </div>
+        
     <!-- Author Section -->
     <div id="author" class="mt-12 text-center">
         <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
@@ -251,40 +262,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        // Sidebar Toggle
-        const toggleSidebar = document.getElementById("toggleSidebar");
-        const sidebar = document.getElementById("sidebar");
+    <script src="iot-script.js"></script>
 
-        toggleSidebar.addEventListener("click", () => {
-            if (sidebar.classList.contains("-translate-x-64")) {
-                gsap.to(sidebar, { x: 0, duration: 0.3 });
-                sidebar.classList.remove("-translate-x-64");
-            } else {
-                gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
-            }
-        });
-
-        // Smooth Scrolling with Navbar Offset
-        document.querySelectorAll('aside a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default jump
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for smooth viewing
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

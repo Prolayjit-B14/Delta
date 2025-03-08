@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
+
 <body class="bg-white text-gray-900 font-sans">
     
     <!-- Navbar -->
@@ -42,61 +43,53 @@
 
     <!-- Main Content -->
     <section class="max-w-5xl mx-auto pt-24 pb-12">
-        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Smart Health Monitoring Device</h2>
-        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Arghya Roy</a></strong></p>
-        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: February 15, 2025</p>
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">Coordinated Traffic System</h2>
+        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Ankan Bhowmik</a></strong></p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 19, 2025</p>
         
     <!-- Sections -->
     <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
-            "A smart health monitoring device is a wearable or portable system that tracks vital health parameters in real-time. It uses sensors to measure heart rate, blood pressure, oxygen levels, temperature, and other key metrics. The device syncs with smartphones or cloud platforms for data storage and analysis. AI and machine learning help detect anomalies and predict potential health risks. Users receive instant alerts for abnormal readings, promoting early intervention. Some models integrate ECG, sleep tracking, and hydration monitoring for comprehensive wellness insights. Remote monitoring allows doctors to access patient data for better diagnosis and treatment. Such devices enhance preventive healthcare and improve overall well-being."
+            The Coordinated Traffic Light System aims to synchronize traffic lights at successive intersections to improve traffic flow and reduce congestion. By ensuring that traffic lights show red or green simultaneously, vehicles can move more efficiently through multiple intersections without unnecessary stops. This system is particularly useful in urban areas with high traffic density.
         </p>
-    </div>
+    </div> 
 
     <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
     <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
         <a href="components.html" class="hover:underline text-gray-800">Components Required</a>
     </h3>
+
     <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li>Arduino Uno – Microcontroller board for processing.</li>
-        <li>HC-SR04 Ultrasonic Sensor – Measures distance using sound waves.</li>
-        <li>PIR Motion Sensor – Detects movement using infrared.</li>
-        <li>LM35 Temperature Sensor – Measures temperature.</li>
-        <li>16x2 LCD Display – Displays data output.</li>
-        <li>Photo Resistor – Absorbs light.</li>
-        <li>Breadboard – For easy circuit connections.</li>
-        <li>Resistors – Used for voltage regulation and circuit protection.</li>
-        <li>Connecting Wires – Used to connect components.</li>
+        <li>DHT11 Temperature & Humidity Sensor</li>
+        <li>ESP8266 Wi-Fi Module</li>
+        <li>Arduino Uno or NodeMCU</li>
+        <li>Resistors (1kΩ, 10kΩ)</li>
+        <li>LEDs (Red, Green)</li>
+        <li>Jumper Wires & Breadboard</li>
     </ul>
 </div>
+
 
     <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
-        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li>
-            <ul class="list-inside list-disc">
-                <li><strong>Powering the Components:</strong> Connect the 5V pin of the Arduino to the positive rail of the breadboard and the GND pin to the negative rail.</li>
-                <li><strong>LCD Display Connection:</strong> Connect VCC and GND of the 16x2 LCD to the power rails. Connect RS, E, and D4-D7 of the LCD to Arduino digital pins (e.g., 7, 8, 9, 10, 11, 12). Connect a potentiometer’s middle pin to the LCD’s V0 (contrast pin), and the other two terminals to 5V and GND.</li>
-                <li><strong>HC-SR04 Ultrasonic Sensor:</strong> Connect VCC and GND to the power rails. Connect Trig and Echo pins to Arduino digital pins (e.g., 2 and 3).</li>
-                <li><strong>PIR Motion Sensor:</strong> Connect VCC and GND to the power rails. Connect OUT pin to an Arduino digital pin (e.g., 4).</li>
-                <li><strong>LM35 Temperature Sensor:</strong> Connect VCC and GND to the power rails. Connect VOUT pin to an Arduino analog pin (e.g., A0).</li>
-                <li><strong>Pulse Oximeter & Heart Rate Sensor:</strong> Connect VCC and GND to the power rails. Connect the signal output to an Arduino analog pin (e.g., A1).</li>
-                <li><strong>LDR (Light Dependent Resistor):</strong> One end connects to 5V, the other to GND via a resistor, and the junction connects to an Arduino analog pin (e.g., A2).</li>
-                <li><strong>Final Checks:</strong> Ensure all connections are secure before uploading the Arduino code.</li>
-            </ul>
-        </li>
-    </ul>
-</div>
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
+        <li>Connect the anode (long leg) of the Red LEDs to digital pin 9 on the Arduino with a Resistor (1kΩ).</li>
+        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+        <li>Connect the anode (long leg) of the Green LEDs to digital pin 8 on the Arduino with a Resistor (1kΩ).</li>
+        <li>Connect the other end of the resistor to the ground (GND) pin on the Arduino.</li>
+        <li>Connect the GND pin on the Arduino to the negative rail on the breadboard.</li>
+        <li>Insert the Code for the system to function.</li>
+    </div>
 
     <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
-        <img src="assets/healthmonitoringcircuit.jpg" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+        <img src="assets/trafficcir.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
-        <img src="assets/healthmonitoringmodel.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+        <img src="assets/trafficmodel.png" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
     </div>
 
     <!-- Arduino Code Section -->
@@ -133,11 +126,22 @@ void loop()
         <iframe width="560" height="315" src="youtube" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
     </div>
 
+<body class="bg-white text-gray-900 font-sans p-6">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-xl font-bold mb-4">Leave a Comment</h2>
+        <div class="bg-gray-100 p-4 rounded-lg shadow flex items-center space-x-2">
+                <input type="file" id="profilePic" accept="image/*" class="w-12 h-12 border rounded-full">
+                <input type="text" id="username" class="p-2 border rounded" placeholder="Your Name" required>
+                <textarea id="commentInput" class="p-2 border rounded flex-1" placeholder="Write a comment..."></textarea>
+                <button onclick="addComment()" class="bg-blue-500 text-white px-4 py-2 rounded">Post</button>
+            </div>
+        <div id="commentList" class="mt-6 space-y-4"></div>
+    </div>
 
     <!-- Author Section -->
     <div id="author" class="mt-12 text-center">
         <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
-        <p class="text-lg text-gray-600">Arghya Roy is an IoT enthusiast with a passion for building innovative projects.</p>
+        <p class="text-lg text-gray-600">Ankan Bhowmik is an IoT enthusiast with a passion for building innovative projects.</p>
     </div>
 </section>
 
@@ -155,40 +159,6 @@ void loop()
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        // Sidebar Toggle
-        const toggleSidebar = document.getElementById("toggleSidebar");
-        const sidebar = document.getElementById("sidebar");
-
-        toggleSidebar.addEventListener("click", () => {
-            if (sidebar.classList.contains("-translate-x-64")) {
-                gsap.to(sidebar, { x: 0, duration: 0.3 });
-                sidebar.classList.remove("-translate-x-64");
-            } else {
-                gsap.to(sidebar, { x: -256, duration: 0.3, onComplete: () => sidebar.classList.add("-translate-x-64") });
-            }
-        });
-
-        // Smooth Scrolling with Navbar Offset
-        document.querySelectorAll('aside a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default jump
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for smooth viewing
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="iot-script.js"></script>
 </body>
 </html>

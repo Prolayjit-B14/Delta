@@ -1,0 +1,74 @@
+/* Hidden section animation */
+.hidden-section { 
+    opacity: 0; 
+    transform: translateY(50px); 
+}
+
+/* Navbar Mobile Menu */
+.mobile-menu { 
+    display: none; 
+}
+
+/* Infinite Scroll Effect */
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    white-space: nowrap;
+}
+
+.scroll-content {
+    display: flex;
+    width: max-content;
+    animation: scroll-loop 15s linear infinite;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    width: 250px;
+    margin: 0 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.project-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll-loop {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Pause on Hover */
+.scroll-container:hover .scroll-content {
+    animation-play-state: paused;
+}

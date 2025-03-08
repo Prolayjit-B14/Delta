@@ -1,22 +1,12 @@
-// GSAP Animations
+// Basic Animations for Header, Navigation & Footer
 gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "bounce" });
-gsap.from(".navbar", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
+gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
 gsap.from("footer", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
 
-// Scroll-triggered animations
+// Register ScrollTrigger Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to("#featured-projects", {
-    duration: 1,
-    opacity: 1,
-    y: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-        trigger: "#featured-projects",
-        start: "top 80%", 
-    }
-});
-
+// Scroll-triggered Animation for Team Section
 gsap.to("#team-section", {
     duration: 1.5,
     opacity: 1,
@@ -28,3 +18,7 @@ gsap.to("#team-section", {
     }
 });
 
+// Mobile Menu Toggle Function
+function toggleMenu() {
+    document.querySelector('.mobile-menu').classList.toggle('hidden');
+}

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tinkercad IoT Showcase</title>
+    <link rel="stylesheet" href="styles.css">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Showcase your Tinkercad IoT projects. A platform to share, collaborate, and inspire.">
     <meta name="keywords" content="IoT, Tinkercad, Electronics, Arduino, Showcase">
     <meta name="author" content="Your Name">
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -17,73 +22,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* Hidden section animation */
-        .hidden-section { opacity: 0; transform: translateY(50px); }
-
-        /* Navbar Mobile Menu */
-        .mobile-menu { display: none; }
-
-        /* Infinite Scroll Effect */
-        .scroll-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            white-space: nowrap;
-        }
-        .scroll-content {
-            display: flex;
-            width: max-content;
-            animation: scroll-loop 15s linear infinite;
-        }
-        .project-card {
-            flex: 0 0 auto;
-            width: 250px;
-            margin: 0 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-        }
-        .project-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            transition: 0.3s;
-        }
-        .project-card h4 {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .project-card p {
-            font-size: 14px;
-            color: #555;
-            padding: 0 10px;
-            margin-bottom: 10px;
-        }
-
-        /* Infinite Scroll Animation */
-        @keyframes scroll-loop {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-        
-        /* Pause on Hover */
-        .scroll-container:hover .scroll-content {
-            animation-play-state: paused;
-        }
-    </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -91,7 +29,7 @@
     <nav class="bg-gray-900 text-white p-4 shadow-md flex justify-between items-center">
         <h1 class="text-xl font-bold">Delta Δ</h1>
         <div class="hidden md:flex space-x-6">
-            <a href="projects.html" class="hover:text-gray-300">Projects</a>
+            <a href="IoT_Projects/projects.html" class="hover:text-gray-300">IoT Projects</a>
             <a href="components.html" class="hover:text-gray-300">Components</a>
             <a href="#team-section" class="hover:text-gray-300">About Us</a>
             <a href="#" class="hover:text-gray-300">YouTube</a>
@@ -111,10 +49,11 @@
     <!-- Hero Section -->
 <header class="h-[40vh] flex flex-col items-center justify-center bg-gradient-to-b from-blue-600 to-blue-500 text-white px-6 lg:px-10">
     <div class="text-center space-y-2 animate-fadeIn">
-        <h2 class="text-4xl lg:text-5xl font-extrabold tracking-wide leading-tight">Showcase Your IoT Project</h1>
+        <h2 class="text-4xl lg:text-5xl font-extrabold tracking-wide leading-tight">Showcase Your Project</h1>
         <p class="text-base lg:text-lg text-gray-200 tracking-wide">
-            A platform to share, collaborate, and inspire with your Tinkercad IoT creations.
+            A platform to share, collaborate, and inspire with your creations.
         </p>
+        <p> IoT Innovation   |   Web Development   |   CAD Drawing </p>
         <div class="border-t-4 border-white w-14 mx-auto"></div> <!-- Small Separator Line -->
     </div>
 </header>
@@ -157,6 +96,26 @@
                 <h4>Automatic Light Control</h4>
                 <p>Light Control using LDR</p>
             </div>
+            <div class="project-card" onclick="location.href='project8.html'">
+                <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
+                <h4>Smart Health Monitoring</h4>
+                <p>A wearable Smart Health Device.</p>
+            </div>
+            <div class="project-card" onclick="location.href='WebDev_Projects/project1.html'">
+                <img src="WebDev_Projects/assets/emw.png" loading="lazy" alt="Automation Traffic">
+                <h4>Event Management Website</h4>
+                <p>A Hackathon Project for WebDev.</p>
+            </div>
+            <div class="project-card" onclick="location.href='WebDev_Projects/project2.html'">
+                <img src="Project-IoT/assets/delta.png" loading="lazy" alt="Automation Traffic">
+                <h4>Delta</h4>
+                <p>A Community Platform for Techy.</p>
+            </div>
+            <div class="project-card" onclick="location.href='project8.html'">
+                <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
+                <h4>Smart Health Monitoring</h4>
+                <p>A wearable Smart Health Device.</p>
+            </div>
         </div>
     </section>
 
@@ -173,17 +132,22 @@
 
         <!-- Right Side: "What is Delta?" -->
         <div class="lg:w-2/3 flex flex-col items-center lg:items-start text-center lg:text-left animate-slideIn">
-
             <h2 class="text-3xl font-bold mb-3 tracking-wider">What is Delta?</h2>
             <p class="text-base leading-relaxed mb-4 text-gray-200">
                 Delta is a vibrant community of budding electronics enthusiasts, formed by students, dedicated to showcasing innovative projects. Our mission is to inspire others by sharing our work, which ranges from simple circuits to complex systems. Explore our projects, learn from our experiences, and join us in celebrating creativity and innovation in electronics.
             </p>
-            <!-- "Show Projects" Button -->
-            <a href="projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out">
-                Show Projects
-            </a>
         </div>
 
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <!-- IoT Projects Button -->
+            <a href="IoT_Projects/projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">IoT Projects</a>
+        
+            <!-- CAD Projects Button -->
+            <a href="cad-projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">CAD Projects</a>
+        
+            <!-- WebDev Projects Button -->
+            <a href="webdev-projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">WebDev Projects</a>
+        </div>
     </div>
 </div>
 
@@ -196,31 +160,46 @@
                 <img src="assets/ankan.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
                 <h4 class="text-xl font-semibold">Ankan Bhowmik</h4>
                 <p class="text-gray-1000">Founder</p>
+                <a href="https://www.linkedin.com/in/ankan-bhowmik/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
+
+                <a href="https://github.com/AnkanBhowmik11" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
             <div class="bg-white p-4 rounded-lg shadow-lg text-center">
                 <img src="assets/arghya.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
                 <h4 class="text-xl font-semibold">Arghya Roy</h4>
                 <p class="text-gray-1000">Project Lead</p>
+                <a href="https://www.linkedin.com/in/arghya-roy-64ba25318/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Arghya015" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
+
             </div>
             <div class="bg-white p-4 rounded-lg shadow-lg text-center">
                 <img src="assets/abhi.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
                 <h4 class="text-xl font-semibold">Abhijit Dutta</h4>
                 <p class="text-gray-1000">Project Coordinator</p>
+                <a href="https://www.linkedin.com/in/abhijitdutta0/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/abhijitdutta0" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://github.com/abhijitdutta0" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
-            <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-                <img src="assets/prob.jpeg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
-                <h4 class="text-xl font-semibold">Prolayjit Biswas</h4>
-                <p class="text-gray-1000">Web Developer</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img src="assets/prob.jpeg" loading="lazy" alt="Prolayjit Biswas - Web Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
+                <h4 class="text-xl font-semibold text-gray-900">Prolayjit Biswas</h4>
+                <p class="text-gray-700">Web Developer</p>
+                <a href="https://www.linkedin.com/in/prolayjit-biswas-030024275/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Pro_layjit14" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://github.com/Prolayjit-B14" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
         </div>
     </section>
+
 <!-- Members Section -->
 <section class="max-w-6xl mx-auto py-10 hidden-section" id="team-section">
     <h3 class="text-2xl font-bold text-center mb-6">Meet Our Contributors</h3>
     <div class="grid md:grid-cols-4 gap-6">
         <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-            <img src="assets/debopam.jpg" loading="lazy" alt="Debopam Sarkar" class="rounded-full mb-4 w-32 h-32 mx-auto">
-            <h4 class="text-xl font-semibold">D</h4>
+            <img src="assets/debopam.jpg" loading="lazy" alt="Agnick Ghosh" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4 class="text-xl font-semibold">Agnick Ghosh</h4>
+            <a href="https://x.com/agnick_ghosh5" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/agnick-ghosh-781a46354/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
         </div>
         <div class="bg-white p-4 rounded-lg shadow-lg text-center">
             <img src="assets/snehasish.jpg" loading="lazy" alt="Snehasish Nag" class="rounded-full mb-4 w-32 h-32 mx-auto">
@@ -242,35 +221,7 @@
         <p>&copy;Δ 2025 Tinkercad IoT Showcase. All Rights Reserved.</p>
     </footer>
 
-    <!-- GSAP Animations -->
-    <script>
-        gsap.from("h2", { duration: 1, opacity: 0, y: -50, ease: "bounce" });
-        gsap.from("nav", { duration: 1, opacity: 0, y: -50, ease: "power3.out" });
-        gsap.from("footer", { duration: 1, opacity: 0, y: 50, ease: "power3.out" });
-
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to("#team-section", {
-            duration: 1.5, opacity: 1, y: 0, ease: "power3.out",
-            scrollTrigger: { trigger: "#team-section", start: "top 85%" }
-        });
-
-        function toggleMenu() {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
-        }
-        // Scroll-triggered animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to("#team-section", {
-            duration: 1.5,
-            opacity: 1,
-            y: 0,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: "#team-section",
-                start: "top 85%",
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>

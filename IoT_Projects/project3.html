@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Your IoT Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    
+    <!-- Navbar -->
+    <nav class="bg-gray-200 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
+        <h1 class="text-3xl font-extrabold tracking-wide">Delta</h1>
+        <div>
+            <a href="index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
+            <a href="projects.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Projects</a>
+            <a href="components.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Components</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Toggle Button -->
+    <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg font-bold shadow-md hover:bg-blue-600 transition-all">
+        ☰ Menu
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-gray-200 text-gray-900 transform -translate-x-64 transition-transform duration-300 shadow-xl">
+        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-blue-600">Contents</h2>
+        <ul class="space-y-4 text-lg pl-6">
+            <li><a href="#concept" class="block hover:text-blue-500 transition-all">🔹 Concept</a></li>
+            <li><a href="#components" class="block hover:text-blue-500 transition-all">🔹 Components</a></li>
+            <li><a href="#connections" class="block hover:text-blue-500 transition-all">🔹 Connections</a></li>
+            <li><a href="#circuit-diagram" class="block hover:text-blue-500 transition-all">🔹 Circuit Diagram</a></li>
+            <li><a href="#prototype-overview" class="block hover:text-blue-500 transition-all">🔹 Prototype</a></li>
+            <li><a href="#simulation-model" class="block hover:text-blue-500 transition-all">🔹 Simulation</a></li>
+            <li><a href="#author" class="block hover:text-blue-500 transition-all">🔹 Author</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="max-w-5xl mx-auto pt-24 pb-12">
+        <h2 class="text-5xl font-bold text-center mb-4 text-blue-600">LED Controller by Arduino Uno R3</h2>
+        <p class="text-center text-lg text-gray-700 mb-6">By <strong><a href="#author" class="text-blue-500 hover:underline">Arghya Roy</a></strong></p>
+        <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: January 23, 2025</p>
+        
+    <!-- Sections -->
+    <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
+        <p class="text-gray-700 text-lg leading-relaxed text-justify">
+        By using the microcontroller how we can operate the blinking of LEDs in a span of time.
+        </p>
+    </div>
+
+    <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
+    <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
+        <a href="components.html" class="hover:underline text-gray-800">Components Required</a>
+    </h3>
+
+    <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
+        <li>Arduino Uno R3</li>
+        <li>LED</li>
+        <li>Resistors</li>
+        <li>Breadboard</li>
+        <li>Jumper wires</li>
+        <li>Power supply</li>
+    </ul>
+</div>
+
+
+    <div id="connections" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Connections</h3>
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg">
+            <li>Connect the Arduino GND pin to the breadboard ground rail.</li>
+            <li>Connect the Arduino 5V pin to the breadboard power rail.</li>
+            <li>Place the red, yellow, and green LEDs on the breadboard, with one leg of each connected to the ground rail.</li>
+            <li>Connect the other leg of the red LED to digital pin 6.</li>
+            <li>Connect the other leg of the yellow LED to digital pin 3.</li>
+            <li>Connect the other leg of the green LED to digital pin 0.</li>
+            <li>Ensure all ground legs of the LEDs are connected to the ground rail, and confirm the ground rail is linked to the Arduino GND pin.</li>
+        <ul/>
+    </div>
+
+    <div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Circuit Diagram</h3>
+        <img src="assets/ledcircuit.png" alt="Circuit Diagram" class="mx-auto rounded-lg shadow-lg">
+    </div>
+
+    <div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Prototype Overview</h3>
+        <img src="assets/ledmodel.jpg" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
+    </div>
+
+    <!-- Arduino Code Section -->
+    <div id="arduino-code" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4">Arduino Code</h3>
+        <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
+            <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
+// C++ code
+
+int animationspeed = 0;
+
+void setup()
+{
+    pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(6, OUTPUT);
+    pinMode(3, OUTPUT);
+    pinMode(0, OUTPUT);
+}
+
+void loop()
+{
+animationspeed = 400;
+    digitalWrite(LED_BUILTIN, HIGH);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(LED_BUILTIN, LOW);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(6, HIGH);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(6, LOW);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(3, HIGH);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(3, LOW);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(0, HIGH);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+    digitalWrite(0, LOW);
+delay(animationspeed); // Wait for animationspeed millisecond(s)
+}
+            </code></pre>
+        </div>
+    </div>
+
+    <div id="simulation-model" class="mt-10 border-b-2 border-gray-400 pb-6">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Simulation Model</h3>
+        <iframe width="560" height="315" src="youtube" frameborder="0" allowfullscreen class="mx-auto rounded-lg shadow-xl"></iframe>
+    </div>
+
+    <body class="bg-white text-gray-900 font-sans p-6">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-xl font-bold mb-4">Leave a Comment</h2>
+            <div class="bg-gray-100 p-4 rounded-lg shadow flex items-center space-x-2">
+                    <input type="file" id="profilePic" accept="image/*" class="w-12 h-12 border rounded-full">
+                    <input type="text" id="username" class="p-2 border rounded" placeholder="Your Name" required>
+                    <textarea id="commentInput" class="p-2 border rounded flex-1" placeholder="Write a comment..."></textarea>
+                    <button onclick="addComment()" class="bg-blue-500 text-white px-4 py-2 rounded">Post</button>
+                </div>
+            <div id="commentList" class="mt-6 space-y-4"></div>
+        </div>
+        
+
+    <!-- Author Section -->
+    <div id="author" class="mt-12 text-center">
+        <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
+        <p class="text-lg text-gray-600">Arghya Roy is an IoT enthusiast with a passion for building innovative projects.</p>
+    </div>
+</section>
+
+<!-- Back to Projects Button -->
+<div class="text-center mt-12">
+    <a href="./projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-700 transition-all duration-300">
+        ← Back to Projects
+    </a>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-gray-900 text-center p-6 mt-16 shadow-inner">
+        <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="iot-script.js"></script>
+    
+</body>
+</html>
