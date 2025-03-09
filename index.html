@@ -55,6 +55,7 @@
         </p>
         <p> IoT Innovation   |   Web Development   |   CAD Drawing </p>
         <div class="border-t-4 border-white w-14 mx-auto"></div> <!-- Small Separator Line -->
+        <h3 class="text-3xl font-bold text-center mb-6">Featured Projects</h3>
     </div>
 </header>
 
@@ -64,12 +65,16 @@
 
     <!-- Featured Projects Section -->
     <section class="scroll-container">
-        <h3 class="text-3xl font-bold text-center mb-6">Featured Projects</h3>
         <div class="scroll-content">
             <div class="project-card" onclick="location.href='project1.html'">
                 <img src="assets/trafficmodel.png" loading="lazy" alt="Automation Traffic">
                 <h4>Coordinated Traffic</h4>
                 <p>Traffic Light System using Arduino.</p>
+            </div>
+            <div class="project-card" onclick="location.href='project4.html'">
+                <img src="assets/autolightmodel.png" loading="lazy" alt="Automatic Light Control">
+                <h4>Automatic Light Control</h4>
+                <p>Light Control using LDR</p>
             </div>
             <div class="project-card" onclick="location.href='project7.html'">
                 <img src="assets/homemodel.png" loading="lazy" alt="LED Blinking">
@@ -91,11 +96,6 @@
                 <h4>Smart Garbage Monitoring</h4>
                 <p>An Automated Cleaning System</p>
             </div>
-            <div class="project-card" onclick="location.href='project4.html'">
-                <img src="assets/autolightmodel.png" loading="lazy" alt="Automatic Light Control">
-                <h4>Automatic Light Control</h4>
-                <p>Light Control using LDR</p>
-            </div>
             <div class="project-card" onclick="location.href='project8.html'">
                 <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
                 <h4>Smart Health Monitoring</h4>
@@ -107,114 +107,163 @@
                 <p>A Hackathon Project for WebDev.</p>
             </div>
             <div class="project-card" onclick="location.href='WebDev_Projects/project2.html'">
-                <img src="Project-IoT/assets/delta.png" loading="lazy" alt="Automation Traffic">
+                <img src="assets/delta.png" loading="lazy" alt="Automation Traffic">
                 <h4>Delta</h4>
                 <p>A Community Platform for Techy.</p>
-            </div>
-            <div class="project-card" onclick="location.href='project8.html'">
-                <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
-                <h4>Smart Health Monitoring</h4>
-                <p>A wearable Smart Health Device.</p>
             </div>
         </div>
     </section>
 
 <!-- Bottom Section: Blue Background & Left-Aligned Logo -->
-<div class="w-full bg-gradient-to-b from-blue-600 to-blue-500 text-white py-10 px-6">
-    <div class="container mx-auto max-w-5xl flex flex-col lg:flex-row items-center justify-between">
+<div class="bottom-section">
+    <div class="bottom-container">
         
         <!-- Left Side: Logo Aligned to Left -->
-        <div class="lg:w-1/3 flex justify-start mb-6 lg:mb-0">
-            <img src="assets/logo delta.png"
-                alt="Quasar Logo"
-                class="w-48 h-48 drop-shadow-xl">
+        <div class="logo-container">
+            <img src="assets/logo delta.png" alt="Quasar Logo" class="logo-img">
         </div>
 
         <!-- Right Side: "What is Delta?" -->
-        <div class="lg:w-2/3 flex flex-col items-center lg:items-start text-center lg:text-left animate-slideIn">
-            <h2 class="text-3xl font-bold mb-3 tracking-wider">What is Delta?</h2>
-            <p class="text-base leading-relaxed mb-4 text-gray-200">
+        <div class="content-container">
+            <h2 class="heading">What is Delta?</h2>
+            <p class="description">
                 Delta is a vibrant community of budding electronics enthusiasts, formed by students, dedicated to showcasing innovative projects. Our mission is to inspire others by sharing our work, which ranges from simple circuits to complex systems. Explore our projects, learn from our experiences, and join us in celebrating creativity and innovation in electronics.
             </p>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <a href="IoT_Projects/projects.html" class="project-button">IoT Projects</a>
+                <a href="cad-projects.html" class="project-button">CAD Projects</a>
+                <a href="webdev-projects.html" class="project-button">WebDev Projects</a>
+            </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4 mt-4">
-            <!-- IoT Projects Button -->
-            <a href="IoT_Projects/projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">IoT Projects</a>
-        
-            <!-- CAD Projects Button -->
-            <a href="cad-projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">CAD Projects</a>
-        
-            <!-- WebDev Projects Button -->
-            <a href="webdev-projects.html" class="bg-white text-blue-500 px-5 py-2.5 rounded-full text-base font-semibold shadow-md hover:bg-red-600 hover:text-white transition-all duration-300 ease-in-out">WebDev Projects</a>
-        </div>
     </div>
 </div>
 
 
-    <!-- Meet Our Team Section -->
-    <section class="max-w-6xl mx-auto py-10 hidden-section" id="team-section">
-        <h3 class="text-4xl font-bold text-center mb-6">Our Team</h3>
-        <div class="grid md:grid-cols-4 gap-6">
-            <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-                <img src="assets/ankan.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
-                <h4 class="text-xl font-semibold">Ankan Bhowmik</h4>
-                <p class="text-gray-1000">Founder</p>
-                <a href="https://www.linkedin.com/in/ankan-bhowmik/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
 
-                <a href="https://github.com/AnkanBhowmik11" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-                <img src="assets/arghya.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
-                <h4 class="text-xl font-semibold">Arghya Roy</h4>
-                <p class="text-gray-1000">Project Lead</p>
-                <a href="https://www.linkedin.com/in/arghya-roy-64ba25318/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Arghya015" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
-
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-                <img src="assets/abhi.jpg" loading="lazy" alt="John Doe - Lead Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
-                <h4 class="text-xl font-semibold">Abhijit Dutta</h4>
-                <p class="text-gray-1000">Project Coordinator</p>
-                <a href="https://www.linkedin.com/in/abhijitdutta0/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/abhijitdutta0" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://github.com/abhijitdutta0" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="assets/prob.jpeg" loading="lazy" alt="Prolayjit Biswas - Web Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
-                <h4 class="text-xl font-semibold text-gray-900">Prolayjit Biswas</h4>
-                <p class="text-gray-700">Web Developer</p>
-                <a href="https://www.linkedin.com/in/prolayjit-biswas-030024275/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/Pro_layjit14" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://github.com/Prolayjit-B14" target="_blank" title="GitHub"class="text-gray-800 hover:text-gray-900 text-2xl"><i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
-    </section>
-
-<!-- Members Section -->
+<!-- Meet Our Team Section -->
 <section class="max-w-6xl mx-auto py-10 hidden-section" id="team-section">
-    <h3 class="text-2xl font-bold text-center mb-6">Meet Our Contributors</h3>
+    <h3 class="text-4xl font-bold text-center mb-6">Our Team</h3>
     <div class="grid md:grid-cols-4 gap-6">
-        <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-            <img src="assets/debopam.jpg" loading="lazy" alt="Agnick Ghosh" class="rounded-full mb-4 w-32 h-32 mx-auto">
-            <h4 class="text-xl font-semibold">Agnick Ghosh</h4>
-            <a href="https://x.com/agnick_ghosh5" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/agnick-ghosh-781a46354/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl mt-2 inline-block"><i class="fab fa-linkedin"></i></a>
+        <!-- Team Member 1 -->
+        <div class="team-card bg-white p-4 rounded-lg shadow-lg text-center">
+            <img src="assets/ankan.jpg" loading="lazy" alt="Ankan Bhowmik - Founder" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4>Ankan Bhowmik</h4>
+            <p>Founder</p>
+            <div>
+                <a href="https://www.linkedin.com/in/ankan-bhowmik/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AnkanBhowmik11" target="_blank" title="GitHub" class="text-gray-800 hover:text-gray-900 text-2xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-            <img src="assets/snehasish.jpg" loading="lazy" alt="Snehasish Nag" class="rounded-full mb-4 w-32 h-32 mx-auto">
-            <h4 class="text-xl font-semibold">S</h4>
+
+        <!-- Team Member 2 -->
+        <div class="team-card bg-white p-4 rounded-lg shadow-lg text-center">
+            <img src="assets/arghya.jpg" loading="lazy" alt="Arghya Roy - Project Lead" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4>Arghya Roy</h4>
+            <p>Project Lead</p>
+            <div>
+                <a href="https://www.linkedin.com/in/arghya-roy-64ba25318/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Arghya015" target="_blank" title="GitHub" class="text-gray-800 hover:text-gray-900 text-2xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-            <img src="assets/anchit.jpg" loading="lazy" alt="Anchit Saha" class="rounded-full mb-4 w-32 h-32 mx-auto">
-            <h4 class="text-xl font-semibold">A</h4>
+
+        <!-- Team Member 3 -->
+        <div class="team-card bg-white p-4 rounded-lg shadow-lg text-center">
+            <img src="assets/abhi.jpg" loading="lazy" alt="Abhijit Dutta - Project Coordinator" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4>Abhijit Dutta</h4>
+            <p>Project Coordinator</p>
+            <div>
+                <a href="https://www.linkedin.com/in/abhijitdutta0/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/abhijitdutta0" target="_blank" title="X (Twitter)" class="text-black hover:text-gray-700 text-2xl">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://github.com/abhijitdutta0" target="_blank" title="GitHub" class="text-gray-800 hover:text-gray-900 text-2xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded-lg shadow-lg text-center">
-            <img src="assets/anchit.jpg" loading="lazy" alt="Anchit Saha" class="rounded-full mb-4 w-32 h-32 mx-auto">
-            <h4 class="text-xl font-semibold">A</h4>
+
+        <!-- Team Member 4 -->
+        <div class="team-card bg-white p-4 rounded-lg shadow-lg text-center">
+            <img src="assets/prob.jpeg" loading="lazy" alt="Prolayjit Biswas - Web Developer" class="rounded-full mb-4 w-32 h-32 mx-auto">
+            <h4>Prolayjit Biswas</h4>
+            <p>Web Developer</p>
+            <div>
+                <a href="https://www.linkedin.com/in/prolayjit-biswas-030024275/" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/Pro_layjit14" target="_blank" title="X (Twitter)" class="text-black hover:text-gray-700 text-2xl">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://github.com/Prolayjit-B14" target="_blank" title="GitHub" class="text-gray-800 hover:text-gray-900 text-2xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </div>
     </div>
 </section>
+
+    <!-- Contributors Section -->
+    <section id="Contributors-section">
+        <h3>Meet Our Contributors</h3>
+        <div class="contributors-grid">
+            
+            <!-- Contributor 1 -->
+            <div class="contributor-card">
+                <img src="assets/debopam.jpg" loading="lazy" alt="Debopam Sarkar">
+                <h4>Debopam Sarkar</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/debopam" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/debopam" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Contributor 2 -->
+            <div class="contributor-card">
+                <img src="assets/snehasish.jpg" loading="lazy" alt="Snehasish Nag">
+                <h4>Snehasish Nag</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/snehasish" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/snehasish" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Contributor 3 -->
+            <div class="contributor-card">
+                <img src="assets/anchit.jpg" loading="lazy" alt="Anchit Saha">
+                <h4>Anchit Saha</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/anchit" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/anchit" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Contributor 4 -->
+            <div class="contributor-card">
+                <img src="assets/ankit.jpg" loading="lazy" alt="Ankit Roy">
+                <h4>Ankit Roy</h4>
+                <div class="social-icons">
+                    <a href="https://x.com/ankit" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ankit" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center p-4 mt-10">

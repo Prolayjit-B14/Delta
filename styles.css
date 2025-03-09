@@ -9,66 +9,467 @@
     display: none; 
 }
 
-/* Infinite Scroll Effect */
+/* Full Scroll Section */
 .scroll-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: #f8f9fa;
-    padding: 20px 0;
+    background: linear-gradient(to right, #ffffff, hsl(0, 0%, 100%));
+    padding: 30px 0;
     white-space: nowrap;
-}
-
-.scroll-content {
     display: flex;
-    width: max-content;
-    animation: scroll-loop 15s linear infinite;
-}
-
-.project-card {
-    flex: 0 0 auto;
-    width: 250px;
-    margin: 0 15px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.project-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    transition: 0.3s;
-}
-
-.project-card h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.project-card p {
-    font-size: 14px;
-    color: #555;
-    padding: 0 10px;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 /* Infinite Scroll Animation */
-@keyframes scroll-loop {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+.scroll-content {
+    display: flex;
+    width: max-content;
+    animation: scroll-loop 18s linear infinite;
 }
 
-/* Pause on Hover */
-.scroll-container:hover .scroll-content {
-    animation-play-state: paused;
+@keyframes scroll-loop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Project Card Design */
+.project-card {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0 20px;
+    background: linear-gradient(135deg, #c9c6c4, #dcdedb);
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgb(224, 136, 136);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+/* Neon Border Animation */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #525052, #232323, #000000);
+    z-index: -1;
+    border-radius: 16px;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* On Hover: 3D Lift Effect + Neon Glow */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Image with Zoom Effect */
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Image Animation */
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Title */
+.project-card h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #333;
+    transition: color 0.3s;
+}
+
+/* Description */
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+/* Glowing Effect */
+.project-card:hover h4 {
+    color: #fffeff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.project-card:hover p {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(253, 254, 254, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Section Styling */
+#team-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: radial-gradient(circle, #f8f9fa, #e9ecef);
+}
+
+/* Fancy Section Header */
+h3 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #222;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #007bff, #141414);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Team Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+/* Team Card - Glassmorphism */
+.bg-white {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(deg);
+    width: 320px;  /* Adjusted width */
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Team Image */
+.team-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgb(255, 255, 255);
+    transition: transform 0.3s ease-in-out;
+}
+/* Floating Image Effect */
+.rounded-full {
+    border: 4px solid #fdfdff;
+    transition: transform 0.4s ease-in-out;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+.rounded-full:hover {
+    transform: translateY(-10px) rotate(360deg) scale(2.5);
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Social Media Icons */
+.text-2xl i {
+    margin: 8px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.text-2xl i:hover {
+    transform: scale(1.5) rotate(-360deg);
+    color: #131413;
+}
+
+/* Name Styling */
+.team-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: hsl(0, 75%, 5%);
+}
+
+/* Name Hover Animation - Scale & Glow */
+.team-card:hover h4 {
+    transform: scale(1.5);
+    color: #ffcc00; /* Gold effect on hover */
+    text-shadow: 0px 0px 10px rgba(56, 0, 239, 0.8);
+}
+
+/* Role Styling */
+.team-card p {
+    font-size: 16px;
+    color: rgba(20, 19, 19, 0.8);
+    transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+    opacity: 0.9;
+}
+
+/* Role Hover Animation - Fade & Slide */
+.team-card:hover p {
+    opacity: 1;
+    transform: translateY(-5px);
+    color: #00ffcc; /* Cyan glow effect */
+    text-shadow: 0px 0px 10px rgba(0, 255, 204, 0.8);
+}
+
+/* Hover Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.1); }
+    50% { box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.3); }
+    100% { box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.1); }
+}
+
+.bg-white:hover {
+    animation: glow 1s infinite alternate;
+}
+
+
+
+
+
+/* Contributors Section Styling */
+#Contributors-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Section Heading */
+#Contributors-section h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Grid Layout */
+.contributors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+
+
+
+
+/* Individual Contributor Card */
+.contributor-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 250px;
+    display: flex;  /* ✅ Needed for alignment */
+    flex-direction: column;  /* ✅ Stacks image & text */
+    align-items: center;  /* ✅ Centers image & text horizontally */
+    justify-content: center;  /* ✅ Ensures vertical centering */
+    position: relative;
+}
+
+
+/* Hover Effect for Contributor Cards */
+.contributor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Contributor Image */
+.contributor-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.contributor-card img:hover {
+    transform: scale(1.5) rotate(5deg);
+}
+
+/* Contributor Name */
+.contributor-card h4 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: hsl(0, 7%, 5%);
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Name Hover Effect */
+.contributor-card:hover h4 {
+    color: hsl(245, 100%, 50%); /* Gold effect */
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+}
+
+/* Social Media Icons */
+.contributor-card .social-icons {
+    margin-top: 10px;
+}
+
+.contributor-card .social-icons a {
+    color: rgb(12, 11, 11);
+    margin: 5px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Social Icons Hover Effect */
+.contributor-card .social-icons a:hover {
+    transform: scale(1.2) rotate(-10deg);
+    color: hwb(215 1% 7%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #Contributors-section h3 {
+        font-size: 1.8rem;
+    }
+    .contributors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .contributor-card {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+/* Bottom Section Styling */
+.bottom-section {
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+/* Container: Flex Row */
+.bottom-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Align logo & text beside each other */
+    gap: 2rem; /* Space between logo and text */
+}
+
+/* Logo Section */
+.logo-container {
+    flex-shrink: 0; /* Prevents logo from shrinking */
+}
+
+.logo-img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* Content Section */
+.content-container {
+    max-width: 800px;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-button {
+    background: white;
+    color: #2563eb;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.project-button:hover {
+    background: #dc2626; /* Red */
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .bottom-container {
+        flex-direction: column; /* Stack logo and text on smaller screens */
+        text-align: center;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+
+    .content-container {
+        text-align: center;
+    }
 }
