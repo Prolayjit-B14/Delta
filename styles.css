@@ -1,3 +1,10 @@
+body {
+
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    color: white;
+}
+
+
 /* Hidden section animation */
 .hidden-section { 
     opacity: 0; 
@@ -13,8 +20,7 @@
 .scroll-container {
     width: 100%;
     overflow: hidden;
-    position: relative;
-    background: linear-gradient(to right, #ffffff, hsl(0, 0%, 100%));
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
     padding: 30px 0;
     white-space: nowrap;
     display: flex;
@@ -40,7 +46,8 @@
 /* Project Card Design */
 .project-card {
     flex: 0 0 auto;
-    width: 280px;
+    width: 350px;
+    height: 270px;
     margin: 0 20px;
     background: linear-gradient(135deg, #c9c6c4, #dcdedb);
     border-radius: 15px;
@@ -81,7 +88,7 @@
 /* Image with Zoom Effect */
 .project-card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
     transition: transform 0.4s ease-in-out;
 }
@@ -98,14 +105,17 @@
     margin: 15px 0;
     color: #333;
     transition: color 0.3s;
+    margin-bottom: 2px;
+    margin-top: 1px;
 }
 
 /* Description */
 .project-card p {
     font-size: 16px;
     color: #666;
-    padding: 0 15px;
-    margin-bottom: 15px;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    margin-top: 2px;
 }
 
 /* Glowing Effect */
@@ -125,6 +135,56 @@
 
 
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Additional styles for better readability and responsiveness */
+header {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    color: white;
+    padding: 1.5rem;
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+@media (min-width: 1024px) {
+    header h2 {
+        font-size: 3rem;
+    }
+    
+    header p {
+        font-size: 1.125rem;
+    }
+}
+
+.border-separator {
+    border-top: 4px solid white;
+    width: 3.5rem;
+    margin: 0.75rem auto;
+}
+
 
 
 
@@ -137,7 +197,7 @@
 #team-section {
     padding: 60px 20px;
     text-align: center;
-    background: radial-gradient(circle, #f8f9fa, #e9ecef);
+
 }
 
 /* Fancy Section Header */
@@ -146,7 +206,7 @@ h3 {
     font-weight: bold;
     color: #222;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #007bff, #141414);
+    background: linear-gradient(90deg, #3eea0a, #141414);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -164,7 +224,7 @@ h3 {
 
 /* Team Card - Glassmorphism */
 .bg-white {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 30px;
@@ -208,7 +268,7 @@ h3 {
 
 .text-2xl i:hover {
     transform: scale(1.5) rotate(-360deg);
-    color: #131413;
+    color: ;
 }
 
 /* Name Styling */
@@ -257,6 +317,8 @@ h3 {
 
 
 
+
+
 /* Contributors Section Styling */
 #Contributors-section {
     max-width: 1200px;
@@ -284,13 +346,9 @@ h3 {
     justify-items: center;
 }
 
-
-
-
-
 /* Individual Contributor Card */
 .contributor-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
@@ -310,7 +368,7 @@ h3 {
 /* Hover Effect for Contributor Cards */
 .contributor-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 10px 20px rgba(217, 25, 25, 0.947);
 }
 
 /* Contributor Image */
@@ -343,13 +401,14 @@ h3 {
     text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
 }
 
-/* Social Media Icons */
+
+/* Socials Media Icons */
 .contributor-card .social-icons {
     margin-top: 10px;
 }
 
 .contributor-card .social-icons a {
-    color: rgb(12, 11, 11);
+    color: ;
     margin: 5px;
     font-size: 1.5rem;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -357,8 +416,8 @@ h3 {
 
 /* Social Icons Hover Effect */
 .contributor-card .social-icons a:hover {
-    transform: scale(1.2) rotate(-10deg);
-    color: hwb(215 1% 7%);
+    transform: scale(1)
+    color: ;
 }
 
 /* Responsive Adjustments */
@@ -405,30 +464,38 @@ h3 {
 }
 
 .logo-img {
-    width: 180px;
+    width: 265px;
     height: auto;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Content Section */
 .content-container {
     max-width: 800px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgb(0, 0, 0); /* Subtle shadow */
+    background-color: white; /* White background */
 }
 
 .heading {
     font-size: 2rem;
     font-weight: bold;
-    color: white;
+    color: rgb(4, 4, 4);
     margin-bottom: 1rem;
-    text-transform: uppercase;
+    text-transform: unset;
     letter-spacing: 1px;
 }
 
 .description {
     font-size: 1rem;
-    color: #d1d5db;
+    color: #050505;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 /* Buttons */
@@ -445,7 +512,7 @@ h3 {
     border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform:unset;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     text-decoration: none;

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tinkercad IoT Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 
     <!-- SEO Meta Tags -->
@@ -31,9 +33,66 @@
         <div class="hidden md:flex space-x-6">
             <a href="IoT_Projects/projects.html" class="hover:text-gray-300">IoT Projects</a>
             <a href="components.html" class="hover:text-gray-300">Components</a>
-            <a href="#team-section" class="hover:text-gray-300">About Us</a>
-            <a href="#" class="hover:text-gray-300">YouTube</a>
-        </div>
+            <!-- About Us Dropdown -->
+<div x-data="{ open: false }" class="relative inline-block">
+    <button @click="open = !open" class="text-white text-lg font-medium focus:outline-none flex items-center px-4 py-2 bg-blue-700 rounded-lg shadow-md hover:bg-blue-800 transition">
+        About Us ▼
+    </button>
+    <!-- Dropdown Menu -->
+
+    <div 
+        x-show="open" 
+        @click.away="open = false"
+        x-transition:enter="transition ease-out duration-200 transform"
+        x-transition:enter-start="opacity-0 translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150 transform"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-2"
+        class="absolute left-1/2 transform -translate-x-1/2  mt-2 min-w-[180px] bg-white rounded-md shadow-md border border-gray-300 p-2"
+    >
+        <a href="#team-section" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            🤝 Meet Our Team
+        </a>
+        <a href="#Contributors-section" class="block px-4 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            🌟 Contributions
+        </a>
+    </div>
+</div>
+
+
+<!-- Dropdown Menu -->
+<div x-data="{ open: false }" class="relative">
+    <button @click="open = !open" class="text-white text-lg font-medium focus:outline-none flex items-center px-3 py-2 bg-blue-700 rounded-lg shadow-md hover:bg-blue-800 transition">
+        Social Links ▼
+    </button>
+
+    <!-- Dropdown Content (Symmetrical Border, Compact) -->
+    <div 
+        x-show="open" 
+        @click.away="open = false"
+        x-transition:enter="transition ease-out duration-200 transform"
+        x-transition:enter-start="opacity-0 translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150 transform"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-2"
+        class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-44 bg-white rounded-md shadow-md border border-gray-300 p-1"
+>
+        <a href="https://twitter.com" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" class="w-5 h-5"> Twitter
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5"> LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-5 h-5"> GitHub
+        </a>
+        <a href="https://youtube.com" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-blue-100 flex items-center gap-2 text-sm rounded-md">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/youtube/youtube-original.svg" class="w-5 h-5"> YouTube
+        </a>
+    </div>
+
         <!-- Mobile Menu Button -->
         <button class="md:hidden" onclick="toggleMenu()">☰</button>
     </nav>
@@ -47,13 +106,14 @@
     </div>
 
     <!-- Hero Section -->
-<header class="h-[40vh] flex flex-col items-center justify-center bg-gradient-to-b from-blue-600 to-blue-500 text-white px-6 lg:px-10">
+    <!-- Hero Section -->
+    <header class="h-[40vh] flex flex-col items-center justify-center text-white px-6 lg:px-10">
     <div class="text-center space-y-2 animate-fadeIn">
         <h2 class="text-4xl lg:text-5xl font-extrabold tracking-wide leading-tight">Showcase Your Project</h1>
         <p class="text-base lg:text-lg text-gray-200 tracking-wide">
             A platform to share, collaborate, and inspire with your creations.
         </p>
-        <p> IoT Innovation   |   Web Development   |   CAD Drawing </p>
+        <p>|   IoT Innovation   |</p>
         <div class="border-t-4 border-white w-14 mx-auto"></div> <!-- Small Separator Line -->
         <h3 class="text-3xl font-bold text-center mb-6">Featured Projects</h3>
     </div>
@@ -66,50 +126,40 @@
     <!-- Featured Projects Section -->
     <section class="scroll-container">
         <div class="scroll-content">
-            <div class="project-card" onclick="location.href='project1.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project1.html'">
                 <img src="assets/trafficmodel.png" loading="lazy" alt="Automation Traffic">
                 <h4>Coordinated Traffic</h4>
                 <p>Traffic Light System using Arduino.</p>
             </div>
-            <div class="project-card" onclick="location.href='project4.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project4.html'">
                 <img src="assets/autolightmodel.png" loading="lazy" alt="Automatic Light Control">
                 <h4>Automatic Light Control</h4>
                 <p>Light Control using LDR</p>
             </div>
-            <div class="project-card" onclick="location.href='project7.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project7.html'">
                 <img src="assets/homemodel.png" loading="lazy" alt="LED Blinking">
                 <h4>Smart Home Automation</h4>
                 <p>Control Home Appliances.</p>
             </div>
-            <div class="project-card" onclick="location.href='project8.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project8.html'">
                 <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
                 <h4>Smart Health Monitoring</h4>
                 <p>A wearable Smart Health Device.</p>
             </div>
-            <div class="project-card" onclick="location.href='project9.html'">
-                <img src="assets/agriculturmodel.png" loading="lazy" alt="Automation Traffic">
+            <div class="project-card" onclick="location.href='IoT_Projects/project9.html'">
+                <img src="assets/agri.png" loading="lazy" alt="Automation Traffic">
                 <h4>Smart Agriculture Monitoring</h4>
                 <p>Monitoring Soil Moisture.</p>
             </div>
-            <div class="project-card" onclick="location.href='project10.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project10.html'">
                 <img src="assets/garbagemodel.jpg" loading="lazy" alt="Automation Traffic">
                 <h4>Smart Garbage Monitoring</h4>
                 <p>An Automated Cleaning System</p>
             </div>
-            <div class="project-card" onclick="location.href='project8.html'">
+            <div class="project-card" onclick="location.href='IoT_Projects/project8.html'">
                 <img src="assets/healthmonitoringmodel.jpg" loading="lazy" alt="Automation Traffic">
                 <h4>Smart Health Monitoring</h4>
                 <p>A wearable Smart Health Device.</p>
-            </div>
-            <div class="project-card" onclick="location.href='WebDev_Projects/project1.html'">
-                <img src="WebDev_Projects/assets/emw.png" loading="lazy" alt="Automation Traffic">
-                <h4>Event Management Website</h4>
-                <p>A Hackathon Project for WebDev.</p>
-            </div>
-            <div class="project-card" onclick="location.href='WebDev_Projects/project2.html'">
-                <img src="assets/delta.png" loading="lazy" alt="Automation Traffic">
-                <h4>Delta</h4>
-                <p>A Community Platform for Techy.</p>
             </div>
         </div>
     </section>
@@ -132,9 +182,9 @@
 
             <!-- Buttons -->
             <div class="button-group">
+                <a href="iot.html" class="project-button">Basics of IoT</a>
+                <a href="arduino.html" class="project-button">About Arduino</a>
                 <a href="IoT_Projects/projects.html" class="project-button">IoT Projects</a>
-                <a href="cad-projects.html" class="project-button">CAD Projects</a>
-                <a href="webdev-projects.html" class="project-button">WebDev Projects</a>
             </div>
         </div>
 
@@ -223,30 +273,30 @@
             <!-- Contributor 1 -->
             <div class="contributor-card">
                 <img src="assets/debopam.jpg" loading="lazy" alt="Debopam Sarkar">
-                <h4>Debopam Sarkar</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/debopam" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/debopam" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <h4>Sarkar</h4>
+                <div class="socials-icons">
+                    <a href="https://x.com/debopam" target="_blank" title="X (Twitter)" class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/debopam" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
 
             <!-- Contributor 2 -->
             <div class="contributor-card">
                 <img src="assets/snehasish.jpg" loading="lazy" alt="Snehasish Nag">
-                <h4>Snehasish Nag</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/snehasish" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/snehasish" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <h4>S Nag</h4>
+                <div class="socials-icons">
+                    <a href="https://x.com/snehasish" target="_blank" title="X (Twitter)"class="text-black hover:text-gray-700 text-2xl" ><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/snehasish" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
 
             <!-- Contributor 3 -->
             <div class="contributor-card">
                 <img src="assets/anchit.jpg" loading="lazy" alt="Anchit Saha">
-                <h4>Anchit Saha</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/anchit" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/anchit" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <h4>Ana</h4>
+                <div class="socials-icons">
+                    <a href="https://x.com/anchit" target="_blank" title="X (Twitter)" class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/anchit" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -254,20 +304,17 @@
             <div class="contributor-card">
                 <img src="assets/ankit.jpg" loading="lazy" alt="Ankit Roy">
                 <h4>Ankit Roy</h4>
-                <div class="social-icons">
-                    <a href="https://x.com/ankit" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/ankit" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <div class="socials-icons">
+                    <a href="https://x.com/ankit" target="_blank" title="X (Twitter)" class="text-black hover:text-gray-700 text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ankit" target="_blank" title="LinkedIn" class="text-blue-600 hover:text-blue-800 text-2xl" ><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-
-        </div>
-    </section>
-
+        </section>
 
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center p-4 mt-10">
-        <p>&copy;Δ 2025 Tinkercad IoT Showcase. All Rights Reserved.</p>
+        <p>Made with ❤️ by Δ</p>
     </footer>
 
     <script src="script.js"></script>
