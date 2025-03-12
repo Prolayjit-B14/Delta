@@ -22,3 +22,13 @@ gsap.to("#team-section", {
 function toggleMenu() {
     document.querySelector('.mobile-menu').classList.toggle('hidden');
 }
+
+let scrollContent = document.querySelector('.scroll-content');
+
+function pauseScroll() {
+    scrollContent.style.animationPlayState = 'paused';
+}
+
+function resumeScroll() {
+    scrollContent.style.animationPlayState = 'running';
+}

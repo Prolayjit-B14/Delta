@@ -31,7 +31,7 @@ body {
 .scroll-content {
     display: flex;
     width: max-content;
-    animation: scroll-loop 18s linear infinite;
+    animation: scroll-loop 10s linear infinite;
 }
 
 @keyframes scroll-loop {
@@ -49,9 +49,9 @@ body {
     width: 350px;
     height: 270px;
     margin: 0 20px;
-    background: linear-gradient(135deg, #c9c6c4, #dcdedb);
+    background: linear-gradient(135deg, #ffad32, #ffffff);
     border-radius: 15px;
-    box-shadow: 0 12px 25px rgb(224, 136, 136);
+    box-shadow: 0 12px 25px rgb(0, 0, 0);
     overflow: hidden;
     text-align: center;
     position: relative;
@@ -67,7 +67,7 @@ body {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #525052, #232323, #000000);
+    background: linear-gradient(45deg, #05e2ff, #8dff1b, #9b37f9);
     z-index: -1;
     border-radius: 16px;
     filter: blur(8px);
@@ -78,7 +78,7 @@ body {
 /* On Hover: 3D Lift Effect + Neon Glow */
 .project-card:hover {
     transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgb(0, 0, 0);
 }
 
 .project-card:hover::before {
@@ -129,6 +129,11 @@ body {
     text-shadow: 0 0 10px rgba(253, 254, 254, 0.7);
 }
 
+/* Zoom effect on hover */
+.project-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -206,7 +211,7 @@ h3 {
     font-weight: bold;
     color: #222;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #3eea0a, #141414);
+    background: linear-gradient(90deg, #efff0b, #ff0000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -256,7 +261,7 @@ h3 {
 }
 
 .rounded-full:hover {
-    transform: translateY(-10px) rotate(360deg) scale(2.5);
+    transform: translateY(-10px) rotate(360deg) scale(2.0);
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.3));
 }
 
@@ -282,8 +287,8 @@ h3 {
 /* Name Hover Animation - Scale & Glow */
 .team-card:hover h4 {
     transform: scale(1.5);
-    color: #ffcc00; /* Gold effect on hover */
-    text-shadow: 0px 0px 10px rgba(56, 0, 239, 0.8);
+    color: #0f1ef7f2; /* Gold effect on hover */
+    text-shadow: 0px 0px 10px rgba(223, 239, 0, 0.8);
 }
 
 /* Role Styling */
@@ -298,7 +303,7 @@ h3 {
 .team-card:hover p {
     opacity: 1;
     transform: translateY(-5px);
-    color: #00ffcc; /* Cyan glow effect */
+    color: #ff6600; /* Cyan glow effect */
     text-shadow: 0px 0px 10px rgba(0, 255, 204, 0.8);
 }
 
