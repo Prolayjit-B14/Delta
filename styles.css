@@ -243,6 +243,11 @@ h3 {
     max-width: 100%;
     text-align: center;
 }
+/* Hover Effect - 3D Lift */
+.team-card:hover {
+    transform: perspective(1000px) rotateY(1deg) scale(1.2);
+    box-shadow: 16px 16px 24px rgb(0, 0, 0);
+}
 
 /* Team Image */
 .team-card img {
@@ -373,7 +378,7 @@ h3 {
 /* Hover Effect for Contributor Cards */
 .contributor-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0px 10px 20px rgba(217, 25, 25, 0.947);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.947);
 }
 
 /* Contributor Image */
