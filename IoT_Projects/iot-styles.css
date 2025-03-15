@@ -1,22 +1,31 @@
-
-/* Custom VS Code-Like Syntax Colors */
+/* Enhanced VS Code-Like Syntax Colors for C++ */
 code.language-cpp {
     font-family: "Fira Code", monospace;
-    font-size: 1.1rem;
+    font-size: .9rem;
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    padding: 1px;
+    border-radius: 20px;
 }
 
-/* Keywords (void, int, pinMode, return) */
+/* Keywords (void, int, return, class, struct) */
 .token.keyword {
     color: #569CD6; /* Light Blue */
     font-weight: bold;
 }
 
-/* Functions (digitalWrite, delay) */
+/* Data Types (int, float, double, char) */
+.token.builtin {
+    color: #4FC1FF; /* Cyan */
+    font-weight: bold;
+}
+
+/* Functions (digitalWrite, delay, main) */
 .token.function {
     color: #DCDCAA; /* Yellow */
 }
 
-/* Comments */
+/* Comments (Single-line & Multi-line) */
 .token.comment {
     color: #6A9955; /* Green */
     font-style: italic;
@@ -28,25 +37,42 @@ code.language-cpp {
     font-weight: bold;
 }
 
-/* Strings */
+/* Strings ("Hello World") */
 .token.string {
     color: #CE9178; /* Light Red/Orange */
 }
 
-/* Operators (=, +, -) */
+/* Preprocessor Directives (#include, #define) */
+.token.directive {
+    color: #C586C0; /* Purple */
+    font-weight: bold;
+}
+
+/* Macros (NULL, EXIT_SUCCESS) */
+.token.macro {
+    color: #FF8C00; /* Orange */
+}
+
+/* Operators (=, +, -, *, /, %) */
 .token.operator {
     color: #D4D4D4; /* Light Gray */
 }
 
-/* Brackets */
+/* Brackets and Punctuation ({} [] ()) */
 .token.punctuation {
-    color: #eeff01; /* Light Gray */
+    color: #EEFF01; /* Yellow */
+}
+
+/* Constants (true, false, nullptr) */
+.token.constant {
+    color: #569CD6; /* Light Blue */
+    font-weight: bold;
 }
 
 /* Custom Background for Code Block */
 pre {
     background-color: #1E1E1E !important; /* VS Code Dark+ */
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 20px;
+    padding: 15px;
+    overflow-x: auto;
 }
-

@@ -13,7 +13,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px;
@@ -23,11 +23,14 @@ body {
 .container {
     flex: 1;
     max-width: 50%;
+    height: 420px;
     background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
-    padding: 30px;
+    padding: 20px;
+    border: 2px solid black;
     border-radius: 20px;
     box-shadow: 0px 4px 12px rgb(0, 0, 0);
 }
+
 /* From Header */
 h2 {
     font-size: 2.5rem;
@@ -69,16 +72,14 @@ h2 {
     color: rgb(222, 237, 0);
     font-size: 18px;
     font-weight: bold;
-    border: none;
+    border: 2px solid black;
     padding: 14px;
     cursor: pointer;
     border-radius: 6px;
     transition: 0.3s;
 }
 
-.btn-submit:hover {
-    background: #f15a23;
-}
+
 
 /* Success Message */
 #success-message {
@@ -95,8 +96,10 @@ h2 {
 .testimonial-section {
     flex: 1;
     max-width: 50%;
+    height: 400px;
     padding: 30px;
     background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    border: 2px solid black;
     border-radius: 20px;
     box-shadow: 0px 4px 12px rgb(0, 0, 0);;
     overflow: hidden;
@@ -104,7 +107,7 @@ h2 {
 
 /* Testimonial Header */
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.555rem;
     color: #222222;
     margin-bottom: 20px;
 }
@@ -118,6 +121,8 @@ h2 {
 .testimonial-container {
     position: relative;
     max-width: 700px;
+    border: 2px solid black;
+    border-radius: 20px;
     margin: auto;
     overflow: hidden;
     margin-top: 10px;
@@ -134,7 +139,9 @@ h2 {
 /* Individual Testimonial */
 .testimonial {
     min-width: 100%;
+    height: 250px;
     box-sizing: border-box;
+    border: #000000;
     padding: 25px;
     background: #ffffff;
     border-radius: 20px;
@@ -153,20 +160,20 @@ h2 {
 }
 
 .profile img {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 2px solid #041003;
 }
 
 .profile h3 {
-    font-size: 1.2rem;
+    font-size: 2 rem;
     margin: 0;
     color: #222;
 }
 
 .profile p {
-    color: #777;
+    color: #b51414;
     font-size: 0.9rem;
 }
 
@@ -247,6 +254,7 @@ body {
     height: 270px;
     margin: 0 20px;
     background: linear-gradient(135deg, #ffad32, #ffffff);
+    border: 2px solid black;
     border-radius: 15px;
     box-shadow: 0 12px 25px rgb(0, 0, 0);
     overflow: hidden;
@@ -275,7 +283,7 @@ body {
 /* On Hover: 3D Lift Effect + Neon Glow */
 .project-card:hover {
     transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 15px 30px rgb(0, 0, 0);
+    box-shadow: 10 15px 30px rgb(0, 0, 0);
 }
 
 .project-card:hover::before {
@@ -420,7 +428,7 @@ h3 {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
+    gap: 25px;
     justify-items: center;
 }
 
@@ -428,10 +436,10 @@ h3 {
 .bg-white {
     background: rgb(255, 255, 255);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid black;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0);
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
@@ -442,7 +450,7 @@ h3 {
 }
 /* Hover Effect - 3D Lift */
 .team-card:hover {
-    transform: perspective(1000px) rotateY(1deg) scale(1.2);
+    transform: perspective(1000px) rotateY(1deg) scale(1.1);
     box-shadow: 16px 16px 24px rgb(0, 0, 0);
 }
 
@@ -450,14 +458,14 @@ h3 {
 .team-card img {
     width: 150px;
     height: 150px;
+    border: 2px solid black;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid rgb(255, 255, 255);
     transition: transform 0.3s ease-in-out;
 }
 /* Floating Image Effect */
 .rounded-full {
-    border: 4px solid #fdfdff;
+    border: 2px solid black;
     transition: transform 0.4s ease-in-out;
     filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
 }
@@ -468,7 +476,7 @@ h3 {
 }
 
 /* Social Media Icons */
-.text-2xl i {
+#team-section i {
     margin: 8px;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -557,7 +565,7 @@ h3 {
 .contributor-card {
     background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid black;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -584,13 +592,13 @@ h3 {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 3px solid rgb(0, 0, 0);
     transition: transform 0.3s ease-in-out;
 }
 
 /* Image Hover Effect */
 .contributor-card img:hover {
-    transform: scale(1.5) rotate(5deg);
+    transform: scale(1.35) rotate(0deg);
 }
 
 /* Contributor Name */
@@ -601,11 +609,13 @@ h3 {
     margin-top: 10px;
     transition: color 0.3s ease-in-out;
 }
-
+.contributor-card h6 {
+    color: #000;
+}
 /* Name Hover Effect */
 .contributor-card:hover h4 {
-    color: hsl(245, 100%, 50%); /* Gold effect */
-    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+    color: hsl(41, 100%, 51%); /* Gold effect */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
 
 
@@ -623,7 +633,7 @@ h3 {
 
 /* Social Icons Hover Effect */
 .contributor-card .social-icons a:hover {
-    transform: scale(1)
+    transform: scale()
     color: ;
 }
 
@@ -675,14 +685,16 @@ h3 {
     height: auto;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
     border-radius: 10px;
+    border: 2px solid black;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Content Section */
 .content-container {
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
     margin: 20px;
+    border: 2px solid black;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgb(0, 0, 0); /* Subtle shadow */
     background-color: rgb(255, 255, 255); /* White background */
@@ -814,8 +826,8 @@ body {
     display: none;
 }
 
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
-background: rgb(255, 255, 255);
+
+
 
 .offerings {
     background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
@@ -826,6 +838,7 @@ background: rgb(255, 255, 255);
     margin: 0 auto;
     height: 500px;
     text-align: center;
+    border: 2px solid black;
     box-shadow: 1px 5px 20px rgb(0, 0, 0); /* Subtle shadow */
     background-color: rgb(255, 255, 255); /* White background */
     border-radius: 20px;
@@ -845,21 +858,34 @@ background: rgb(255, 255, 255);
 .offering-card {
     background: rgb(255, 255, 255);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.984);
     width: 300px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 .offering-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgb(145, 145, 145);
 }
-.offering-card h3 {
+.offering-card:hover h4 {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(0, 0, 0);
+    background: rgb(203, 188, 188);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.offering-card h4 {
     font-size: 20px;
-    color: #222;
+    color: #ff0000;
+    box-shadow: 0 6px 15px rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 15px;
     margin-bottom: 10px;
 }
 .offering-card p {
     color: #555;
     font-size: 16px;
-}
+} 

@@ -20,7 +20,7 @@
     <nav class="bg-gray-200 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
         <h1 class="text-3xl font-extrabold tracking-wide">Delta</h1>
         <div>
-            <a href="index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
+            <a href="../index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
             <a href="projects.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Projects</a>
             <a href="components.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Components</a>
         </div>
@@ -106,10 +106,13 @@
     </div>
 
     <!-- Arduino Code Section -->
+
     <div id="arduino-code" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
         <h3 class="text-3xl font-semibold text-gray-800 mb-4">Arduino Code</h3>
-        <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
-            <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
+        <div class="inline-block bg-gray-900 p-6 rounded-lg shadow-lg text-left relative">
+            <button onclick="copyCode()" class="absolute top-2 right-2 bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm">Copy</button>
+            <pre class="rounded-lg overflow-auto p-4 line-numbers">
+                <code class="language-cpp">
 // C++ code
 
 void setup()

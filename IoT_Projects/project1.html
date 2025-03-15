@@ -23,7 +23,7 @@
     <nav class="bg-gray-200 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
         <h1 class="text-3xl font-extrabold tracking-wide">Delta</h1>
         <div>
-            <a href="index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
+            <a href="../index.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Home</a>
             <a href="projects.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Projects</a>
             <a href="components.html" class="mx-4 font-bold hover:text-blue-600 transition-all duration-300">Components</a>
         </div>
@@ -138,26 +138,6 @@
 </div>
 
 
-<!-- Initialize Prism.js -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    Prism.highlightAll();
-});
-
-function copyCode() {
-    const codeElement = document.querySelector("#arduino-code pre code");
-    navigator.clipboard.writeText(codeElement.innerText).then(() => {
-        alert("✅ Code copied to clipboard!");
-    });
-}
-</script>
-
-
-
-
-
-        </div>
-    </div>
 
     <div id="simulation-model" class="mt-10 border-b-2 border-gray-400 pb-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Simulation Model</h3>
@@ -185,7 +165,7 @@ function copyCode() {
 
 <!-- Back to Projects Button -->
 <div class="text-center mt-12">
-    <a href="./projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-700 transition-all duration-300">
+    <a href="projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-700 transition-all duration-300">
         ← Back to Projects
     </a>
 </div>
