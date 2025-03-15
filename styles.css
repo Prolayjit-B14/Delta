@@ -813,3 +813,53 @@ body {
     font-size: 12px;
     display: none;
 }
+
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
+background: rgb(255, 255, 255);
+
+.offerings {
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    padding: 60px 20px;
+}
+.offerings-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 500px;
+    text-align: center;
+    box-shadow: 1px 5px 20px rgb(0, 0, 0); /* Subtle shadow */
+    background-color: rgb(255, 255, 255); /* White background */
+    border-radius: 20px;
+}
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+.offerings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.offering-card {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.offering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.offering-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+.offering-card p {
+    color: #555;
+    font-size: 16px;
+}
