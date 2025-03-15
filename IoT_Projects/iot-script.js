@@ -80,9 +80,9 @@
 
     function addFixedComments() {
         let fixedComments = [
-            { username: "Alice", commentText: "Great project! Looking forward to updates.", profilePicUrl: "default-profile.png", timestamp: new Date().toLocaleString(), replies: [] },
-            { username: "Bob", commentText: "Amazing work! Keep it up!", profilePicUrl: "default-profile.png", timestamp: new Date().toLocaleString(), replies: [
-                { username: "Charlie", commentText: "I agree! This is inspiring!", profilePicUrl: "default-profile.png", timestamp: new Date().toLocaleString() }
+            { username: "Abhijit", commentText: "Great project! Looking forward to updates.", profilePicUrl: "/Project-IoT/assets/abhi.jpg", timestamp: new Date().toLocaleString(), replies: [] },
+            { username: "Prolayjit", commentText: "Amazing work! Keep it up!", profilePicUrl: "/Project-IoT/assets/prob.jpeg", timestamp: new Date().toLocaleString(), replies: [
+                { username: "Agnick", commentText: "I agree! This is inspiring!", profilePicUrl: "default-profile.png", timestamp: new Date().toLocaleString() }
             ] }
         ];
         fixedComments.forEach(displayComment);
@@ -178,4 +178,5 @@
         replyBox.appendChild(replyInput);
         replyBox.appendChild(replyButton);
     }
+
 

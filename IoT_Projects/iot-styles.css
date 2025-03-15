@@ -1,0 +1,52 @@
+
+/* Custom VS Code-Like Syntax Colors */
+code.language-cpp {
+    font-family: "Fira Code", monospace;
+    font-size: 1.1rem;
+}
+
+/* Keywords (void, int, pinMode, return) */
+.token.keyword {
+    color: #569CD6; /* Light Blue */
+    font-weight: bold;
+}
+
+/* Functions (digitalWrite, delay) */
+.token.function {
+    color: #DCDCAA; /* Yellow */
+}
+
+/* Comments */
+.token.comment {
+    color: #6A9955; /* Green */
+    font-style: italic;
+}
+
+/* Numbers (30000, 9, 8) */
+.token.number {
+    color: #B5CEA8; /* Light Green */
+    font-weight: bold;
+}
+
+/* Strings */
+.token.string {
+    color: #CE9178; /* Light Red/Orange */
+}
+
+/* Operators (=, +, -) */
+.token.operator {
+    color: #D4D4D4; /* Light Gray */
+}
+
+/* Brackets */
+.token.punctuation {
+    color: #eeff01; /* Light Gray */
+}
+
+/* Custom Background for Code Block */
+pre {
+    background-color: #1E1E1E !important; /* VS Code Dark+ */
+    border-radius: 8px;
+    padding: 12px;
+}
+

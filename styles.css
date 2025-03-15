@@ -1,5 +1,202 @@
+/* General Styles */
 body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
 
+/* Wrapper for Contact & Testimonials */
+.testimonial-contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* Contact Form Section */
+.container {
+    flex: 1;
+    max-width: 50%;
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgb(0, 0, 0);
+}
+/* From Header */
+h2 {
+    font-size: 2.5rem;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #fa1414;
+    font-size: 2.5rem;
+}
+/* Form Fields */
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color:black ;
+    text-align: left;
+}
+
+.container input, 
+.container textarea {
+    width: 100%;
+    padding: 12px;
+    color:rgb(0, 0, 0) ;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: #ff0000;
+    color: rgb(222, 237, 0);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #f15a23;
+}
+
+/* Success Message */
+#success-message {
+    display: none;
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 30px;
+    background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgb(0, 0, 0);;
+    overflow: hidden;
+}
+
+/* Testimonial Header */
+h2 {
+    font-size: 2.5rem;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #fa1414;
+    font-size: 2.5rem;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 10px;
+
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Individual Testimonial */
+.testimonial {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #041003;
+}
+
+.profile h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #222;
+}
+
+.profile p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Review Text */
+.review {
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* Star Rating */
+.stars {
+    font-size: 1.5rem;
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .testimonial-contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container, .testimonial-section {
+        max-width: 100%;
+    }
+}
+
+body {
     background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
     color: white;
 }
@@ -488,7 +685,7 @@ h3 {
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgb(0, 0, 0); /* Subtle shadow */
-    background-color: white; /* White background */
+    background-color: rgb(255, 255, 255); /* White background */
 }
 
 .heading {
@@ -549,4 +746,70 @@ h3 {
     .content-container {
         text-align: center;
     }
+}
+
+
+
+
+
+
+
+
+body {
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    font-family: Arial, sans-serif;
+}
+/* Container */
+.subscription-container {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    color: #190041; /* Text Color */
+    gap: 30px;
+}
+
+/* Input Field */
+.input-field {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    color: #190041; /* Text Color */
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect */
+.input-field:focus {
+    border-color: #320080;
+    box-shadow: 0px 0px 8px rgba(50, 0, 128, 0.5);
+}
+
+/* Button */
+.subscribe-btn {
+    background-color: #190041;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.subscribe-btn:hover {
+    background-color: #320080;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
 }

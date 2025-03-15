@@ -6,8 +6,15 @@
     <title>Showcase Your IoT Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="iot-styles.css">
+    
+        <!-- Include Prism.js Library & Components -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
 </head>
 
 <body class="bg-white text-gray-900 font-sans">
@@ -92,32 +99,63 @@
         <img src="assets/trafficmodel.png" alt="Prototype Overview" class="mx-auto rounded-lg shadow-lg">
     </div>
 
-    <!-- Arduino Code Section -->
-    <div id="arduino-code" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
-        <h3 class="text-3xl font-semibold text-gray-800 mb-4">Arduino Code</h3>
-        <div class="inline-block bg-gray-700 p-6 rounded-lg shadow-lg text-left">
-            <pre class="rounded-lg overflow-auto p-4"><code class="language-cpp">
-// C++ code
 
-void setup()
-{
-    pinMode(9, OUTPUT);
-    pinMode(8, OUTPUT);
+
+
+
+
+
+
+<!-- Arduino Code Section -->
+<div id="arduino-code" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
+    <h3 class="text-3xl font-semibold text-gray-800 mb-4">Arduino Code</h3>
+    <div class="inline-block bg-gray-900 p-6 rounded-lg shadow-lg text-left relative">
+        <button onclick="copyCode()" class="absolute top-2 right-2 bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm">Copy</button>
+        <pre class="rounded-lg overflow-auto p-4 line-numbers">
+            <code class="language-cpp">
+    // Arduino C++ Code (Formatted Correctly)
+
+    void setup() {
+        pinMode(9, OUTPUT); // Set pin 9 as an output
+        pinMode(8, OUTPUT); // Set pin 8 as an output
+    }
+                
+    void loop() {
+        digitalWrite(9, HIGH); // Turn on LED on pin 9
+        digitalWrite(8, LOW);  // Turn off LED on pin 8
+        delay(30000);          // Wait for 30 seconds
+                
+        digitalWrite(8, HIGH); // Turn on LED on pin 8
+        digitalWrite(9, LOW);  // Turn off LED on pin 9
+        delay(30000);          // Wait for 30 seconds
+                
+        // Adjust delay according to your needs
+    }
+                
+            </code>
+        </pre>
+    </div>
+</div>
+
+
+<!-- Initialize Prism.js -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    Prism.highlightAll();
+});
+
+function copyCode() {
+    const codeElement = document.querySelector("#arduino-code pre code");
+    navigator.clipboard.writeText(codeElement.innerText).then(() => {
+        alert("✅ Code copied to clipboard!");
+    });
 }
+</script>
 
-void loop()
-{
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    delay(30000); // Wait for 30000 millisecond(s)
 
-//adjust delay according to your need
 
-}
-            </code></pre>
+
+
         </div>
     </div>
 
