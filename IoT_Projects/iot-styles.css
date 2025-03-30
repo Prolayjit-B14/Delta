@@ -1,11 +1,14 @@
 /* Enhanced VS Code-Like Syntax Colors for C++ */
 code.language-cpp {
     font-family: "Fira Code", monospace;
-    font-size: .9rem;
+    font-size: 0.95rem;
     background-color: #1E1E1E;
     color: #D4D4D4;
-    padding: 1px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    display: block;
+    overflow-x: auto;
+    line-height: 1.4;
 }
 
 /* Keywords (void, int, return, class, struct) */
@@ -69,10 +72,66 @@ code.language-cpp {
     font-weight: bold;
 }
 
-/* Custom Background for Code Block */
-pre {
-    background-color: #1E1E1E !important; /* VS Code Dark+ */
-    border-radius: 20px;
-    padding: 15px;
-    overflow-x: auto;
+/* Preprocessor Directives (#include, #define, etc.) */
+.token.directive {
+    color: #C586C0 !important; /* Purple */
+    font-weight: bold;
 }
+
+/* Header Files (<Adafruit_Sensor.h>) */
+.token.macro {
+    color: #FF8C00 !important; /* Orange */
+    font-style: italic;
+}
+/* Preprocessor Directives (#include, #define, etc.) */
+.token.directive {
+    color: #C586C0 !important; /* Purple */
+    font-weight: bold;
+}
+
+/* Header Files (<DHT.h>, <Wire.h>) */
+.token.string {
+    color: #FF8C00 !important; /* Orange */
+    font-style: italic;
+}
+
+
+
+
+
+
+
+.video-container {
+    text-align: center;
+    margin: 40px 0;
+
+
+.video-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Make the video wrapper maintain a 16:9 aspect ratio */
+.video-wrapper {
+    position: relative;
+    width: 100%; /* Responsive width */
+    aspect-ratio: 16 / 9;
+    max-width: 1000px; /* Increase the width */
+    margin: auto;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
