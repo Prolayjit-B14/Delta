@@ -13,13 +13,8 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-            
-
-            
-
 </head>
-<body class="bg-white text-gray-900 font-sans">
-    
+
     <!-- Navbar -->
     <nav class="bg-gray-200 text-gray-900 p-5 shadow-lg flex justify-between items-center fixed top-0 w-full z-50">
         <h1 class="text-3xl font-extrabold tracking-wide">Delta</h1>
@@ -32,25 +27,25 @@
 
     <!-- Sidebar Toggle Button -->
     <button id="toggleSidebar" class="fixed top-20 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg font-bold shadow-md hover:bg-blue-600 transition-all">
-        ☰ Menu
+        ☰ Contents
     </button>
 
     <!-- Sidebar Navigation -->
-    <aside id="sidebar" class="fixed top-16 left-0 w-64 h-full bg-gray-200 text-gray-900 transform -translate-x-64 transition-transform duration-300 shadow-xl">
-        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-blue-600">Contents</h2>
-        <ul class="space-y-2.5 text-lg pl-6">
+    <aside id="sidebar" class="fixed top-16 left-0 w-60 h-full bg-gray-200 text-gray-900 transform -translate-x-64 transition-transform duration-300 shadow-xl">
+        <h2 class="text-xl font-bold text-center mt-16 mb-4 text-blue-600"></h2>
+        <ul class="space-y-2 text-lg pl-4">
             <li><a href="#concept" class="block hover:text-blue-500 transition-all">🔹 Key Concept</a></li>
-            <li><a href="#components" class="block hover:text-blue-500 transition-all">🔹 Components Required</a></li>
+            <li><a href="#components" class="block hover:text-blue-500 transition-all">🔹 Components</a></li>
             <li><a href="#connections" class="block hover:text-blue-500 transition-all">🔹 Connections</a></li>
             <li><a href="#circuit-diagram" class="block hover:text-blue-500 transition-all">🔹 Circuit Diagram</a></li>
             <li><a href="#prototype-overview" class="block hover:text-blue-500 transition-all">🔹 Prototype Model</a></li>
             <li><a href="#arduino-code" class="block hover:text-blue-500 transition-all">🔹 Arduino Code</a></li>
             <li><a href="#simulation-model" class="block hover:text-blue-500 transition-all">🔹 Simulation Video</video></a></li>
-            <li><a href="#working-prototype" class="block hover:text-blue-500 transition-all">🔹 Wroking Prototype</a></li>
+            <li><a href="#working-prototype" class="block hover:text-blue-500 transition-all">🔹 Working Prototype</a></li>
             <li><a href="#serial-monitor" class="block hover:text-blue-500 transition-all">🔹 Serial Monitor</a></li>
             <li><a href="#linkedin-post" class="block hover:text-blue-500 transition-all">🔹 Linkedin Post</a></li>
-            <li><a href="#comment" class="block hover:text-blue-500 transition-all">🔹 Comments Section</a></li>
-            <li><a href="#author" class="block hover:text-blue-500 transition-all">🔹 About the Author</a></li>
+            <li><a href="#comment" class="block hover:text-blue-500 transition-all">🔹 Comments <Section></Section></a></li>
+            <li><a href="#author" class="block hover:text-blue-500 transition-all">🔹 Author</a></li>
         </ul>
     </aside>
 
@@ -61,7 +56,8 @@
         <p class="text-center text-md text-gray-600 mb-6">📅 Post Date: February 23, 2025</p>
         
     <!-- Sections -->
-    <div id="concept" class="mt-10 border-b-2 border-gray-400 pb-6">
+    <div id="concept" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
+        <div id="components" class="mt-10 border-b-2 border-gray-300 pb-6 bg-gray-50 rounded-lg shadow-md p-6">
         <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">Concept</h3>
         <p class="text-gray-700 text-lg leading-relaxed text-justify">
             The Smart Agriculture Monitoring System is an IoT-based project that integrates Arduino Uno with various sensors and components to monitor and control agricultural conditions in real time. The system collects environmental data, processes it, and provides alerts or automated actions to optimize farming operations.
@@ -69,45 +65,35 @@
         </p>
     </div>
 
-    <div id="components" class="mt-10 border-b-2 border-gray-400 pb-6">
-    <h3 class="text-3xl font-semibold text-center text-gray-800 mb-4">
-        <a href="components.html" class="hover:underline text-gray-800">Components Required</a>
-    </h3>
+        <!-- Components Section -->
+        <div id="components" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
+        <h3 class="text-3xl font-semibold text-center text-gray-800 mb-6">
+            <a href="components.html" class="hover:underline hover:text-indigo-600 transition duration-300">🔧 Components Required</a>
+        </h3>
+    
+        <ul class="list-disc text-gray-700 text-lg mx-auto max-w-2xl text-left space-y-3 pl-6">
+            <li><strong>Arduino Uno</strong> – Microcontroller that processes sensor data and controls components.</li>
+            <li><strong>LED Indicators (Red, Green, Blue)</strong> – Indicate different system states.</li>
+            <li><strong>Temperature Sensor (TMP36)</strong> – Measures the surrounding temperature.</li>
+            <li><strong>Buzzer</strong> – Provides audible alerts for critical conditions.</li>
+            <li><strong>LCD Display</strong> – Shows real-time sensor readings and status messages.</li>
+            <li><strong>Relay Module (SPDT)</strong> – Controls a <strong>DC motor</strong> for automation.</li>
+            <li><strong>DC Motor</strong> – Simulates an irrigation pump or mechanical farming task.</li>
+            <li><strong>Function Generator</strong> – Provides signals to test and control the motor.</li>
+            <li><strong>IoT Integration</strong> – Sends data to the cloud for remote monitoring.</li>
+        </ul>
+    </div>
+    
 
-    <ul class="list-disc text-gray-700 text-lg mx-auto max-w-lg text-left">
-        <li><strong>Arduino Uno</strong> – The microcontroller that processes sensor data and controls components.</li>
-        <li><strong>LED Indicators (Red, Green, Blue)</strong> – Indicate different system states.</li>
-        <li><strong>Temperature Sensor (TMP36)</strong> – Measures the surrounding temperature for real-time monitoring.</li>
-        <li><strong>Buzzer</strong> – Provides audible alerts for critical conditions.</li>
-        <li><strong>LCD Display</strong> – Shows real-time sensor readings and status messages.</li>
-        <li><strong>Relay Module (SPDT)</strong> – Controls a <strong>DC motor</strong> for automation.</li>
-        <li><strong>DC Motor</strong> – Simulates an irrigation pump or any mechanical farming task.</li>
-        <li><strong>Function Generator</strong> – Provides signals to test and control the motor.</li>
-        <li><strong>IoT Integration</strong> – Sends data to the cloud for remote monitoring via a web or mobile app.</li>
-    </ul>
-</div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arduino Connections</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
-
-    <div id="connections" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-8">
+    <div id="connections" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
         <h3 class="text-4xl font-bold text-center text-indigo-800 mb-6">🔌 Connections</h3>
-        
         <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">📝 Wiring Instructions</h2>
-        
         <ul class="list-disc text-gray-700 text-lg text-center mb-6">
             <li><strong>Ensure all components are properly grounded.</strong></li>
             <li><strong>Connect power supplies correctly to avoid short circuits.</strong></li>
             <li><strong>Follow the pin mapping carefully.</strong></li>
         </ul>
-
         <!-- Connection Sections -->
         <div class="space-y-8">
             <div class="bg-gradient-to-r from-indigo-100 via-indigo-50 to-indigo-100 p-6 rounded-lg shadow-md">
@@ -195,16 +181,23 @@
 
 
 <!-- Circuit Diagram Section -->
-<div id="circuit-diagram" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
-    <h3 class="text-3xl font-semibold text-gray-800 mb-4">Circuit Diagram</h3>
-    <img src="assets/agriclturalcircuit.png" alt="Circuit Diagram" class="circuit-img">
+<div id="circuit-diagram" class="section-container">
+    <h3 class="section-title">Circuit Diagram</h3>
+    <img src="assets/agriclturalcircuit.png" alt="Circuit Diagram" class="section-img" onclick="zoomImage(this)">
 </div>
 
 <!-- Prototype Overview Section -->
-<div id="prototype-overview" class="mt-10 border-b-2 border-gray-400 pb-6 text-center">
-    <h3 class="text-3xl font-semibold text-gray-800 mb-4">Prototype Overview</h3>
-    <img src="assets/agriculturmodel.png" alt="Prototype Overview" class="prototype-img">
+<div id="prototype-overview" class="section-container">
+    <h3 class="section-title">Prototype Overview</h3>
+    <img src="assets/agriculturmodel.png" alt="Prototype Overview" class="section-img" onclick="zoomImage(this)">
 </div>
+
+<!-- Fullscreen Zoom Overlay -->
+<div id="imageOverlay" class="fullscreen-overlay" onclick="closeZoom()">
+    <span class="close-btn">&times;</span>
+    <img id="zoomedImg" src="" alt="Zoomed Image">
+</div>
+
 
 
 <!-- Arduino Code Section (Properly Centered) -->
@@ -355,28 +348,23 @@ void loop() {
     </div>
 </div>
 
+<!-- Featured LinkedIn Post (Centered) -->
+<section id="linkedin-post" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Featured LinkedIn Post</h2>
+    <p class="text-gray-600 mb-4">Check out this latest update from LinkedIn!</p>
 
+    <div class="flex justify-center">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7309591877329006594?collapsed=1"
+            height="500" class="w-full max-w-md rounded-lg" frameborder="0" allowfullscreen 
+            title="Embedded LinkedIn Post">
+        </iframe>
+    </div>
+</section>
 
-
-
-
-
-        <!-- Featured LinkedIn Post (Centered with Respect to Others) -->
-        <section id="linkedin-post" class="bg-white p-6 rounded-xl shadow-lg max-w-xl w-full text-center mx-auto mt-10">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Featured LinkedIn Post</h2>
-            <p class="text-gray-600 mb-4">Check out this latest update from LinkedIn!</p>
-
-            <div class="flex justify-center">
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7309591877329006594?collapsed=1"
-                    height="500" class="w-full max-w-md rounded-lg" frameborder="0" allowfullscreen 
-                    title="Embedded LinkedIn Post">
-                </iframe>
-            </div>
-        </section>
 
 
         <!-- Leave a Comment Section -->
-        <div id="comment" class="max-w-2xl mx-auto mt-10">
+        <div id="comment" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
             <h2 class="text-xl font-bold mb-4 text-center">Leave a Comment</h2>
             <div class="bg-gray-100 p-4 rounded-lg shadow flex items-center space-x-2">
                 <input type="file" id="profilePic" accept="image/*" class="w-12 h-12 border rounded-full">
@@ -387,22 +375,22 @@ void loop() {
             <div id="commentList" class="mt-6 space-y-4"></div>
         </div>
 
-    </div>
+
     <!-- Author Section -->
-    <div id="author" class="mt-12 text-center">
+    <div id="author" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10">
         <h3 class="text-3xl font-semibold text-gray-800 mb-4">About the Author</h3>
         <p class="text-lg text-gray-600">Prolayjit Biswas is an IoT enthusiast with a passion for building innovative projects.</p>
     </div>
-</section>
 
+</div>
 <!-- Back to Projects Button -->
 <div class="text-center mt-12">
     <a href="./projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-blue-700 transition-all duration-300">
         ← Back to Projects
     </a>
 </div>
-</section>
 
+</section>
     <!-- Footer -->
     <footer class="bg-gray-200 text-gray-900 text-center p-6 mt-16 shadow-inner">
         <p class="opacity-75 text-lg">&copy; 2025 IoT Showcase. All Rights Reserved.</p>

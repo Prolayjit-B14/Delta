@@ -1,3 +1,4 @@
+
 /* Enhanced VS Code-Like Syntax Colors for C++ */
 code.language-cpp {
     font-family: "Fira Code", monospace;
@@ -10,6 +11,7 @@ code.language-cpp {
     overflow-x: auto;
     line-height: 1.4;
 }
+
 
 /* Keywords (void, int, return, class, struct) */
 .token.keyword {
@@ -99,27 +101,69 @@ code.language-cpp {
 
 
 
+/* Sidebar Styles */
+#sidebar {
+    width: 170px; /* Slightly smaller width */
+    background: #e5e7eb; /* Light gray */
+    color: #1f2937; /* Dark gray */
+    position: fixed;
+    top: 64px; /* Adjust based on navbar height */
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    padding-top: 50px;
+}
 
-
-.video-container {
+/* Sidebar Heading */
+#sidebar h2 {
+    font-size: 20px; /* Smaller text size */
+    font-weight: 600;
     text-align: center;
-    margin: 40px 0;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    color: #2563eb; /* Blue color */
+}
+
+/* Sidebar List Items */
+#sidebar ul {
+    font-size: 14px; /* Reduced text size */
+    padding-left: 15px;
+}
+
+#sidebar ul li {
+    padding: px 0;
+}
 
 
+
+
+
+/* Centering the Video Sections */
+.video-container {
+    max-width: 900px; /* Controls the width */
+    margin: 20px auto; /* Centers it */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Video Titles */
 .video-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 22px;
+    color: #2c3e50;
     margin-bottom: 15px;
 }
 
-/* Make the video wrapper maintain a 16:9 aspect ratio */
+/* Video Wrapper for Responsiveness */
 .video-wrapper {
     position: relative;
-    width: 100%; /* Responsive width */
-    aspect-ratio: 16 / 9;
-    max-width: 1000px; /* Increase the width */
-    margin: auto;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
 }
 
 .video-wrapper iframe {
@@ -127,11 +171,124 @@ code.language-cpp {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* LinkedIn Post Centering */
+#linkedin-post {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .video-container {
+        max-width: 95%;
+    }
+    #linkedin-post {
+        max-width: 90%;
+    }
+}
+/* Ensure Side Toggle Bar Stays Above */
+.side-toggle-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjust as per your design */
+    height: 100vh;
+    background: #111;
+    z-index: 9999; /* Keeps toggle bar above videos */
 }
 
 
 
+
+
+/* General Styling */
+.section-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border-bottom: 3px solid #ccc;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Image Styling */
+.section-img {
+    width: 100%;
+    max-width: 1000px;
+    height: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.section-img:hover {
+    transform: scale(1.03);
+}
+
+/* Fullscreen Zoom-in Overlay */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Fullscreen Image */
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+/* Show Overlay */
+.fullscreen-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .section-container {
+        max-width: 95%;
+    }
+    .section-img {
+        max-width: 90%;
+    }
+}

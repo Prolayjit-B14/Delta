@@ -189,5 +189,18 @@ function replyComment(button) {
     replyBox.appendChild(replyButton);
 }
 
+// Function to open image in fullscreen mode
+function zoomImage(imgElement) {
+    const overlay = document.getElementById("imageOverlay");
+    const zoomedImg = document.getElementById("zoomedImg");
+
+    zoomedImg.src = imgElement.src;
+    overlay.classList.add("active");
+}
+
+// Function to close fullscreen image
+function closeZoom() {
+    document.getElementById("imageOverlay").classList.remove("active");
+}
 
 
