@@ -64,16 +64,16 @@ const fixedComments = {
         { 
             username: "Arghya Roy", 
             commentText: "Great project! Looking forward to updates.", 
-            profilePicUrl: "/Project-IoT/assets/arghya.jpg", 
+            profilePicUrl: "../Project-IoT/assets/arghya.jpg", 
             timestamp: new Date().toLocaleString(), 
             replies: [
-                { username: "Ankan Bhowmik", commentText: "Absolutely! This looks promising!", profilePicUrl: "/Project-IoT/assets/ankan.jpg", timestamp: new Date().toLocaleString() }
+                { username: "Ankan Bhowmik", commentText: "Absolutely! This looks promising!", profilePicUrl: "../Project-IoT/assets/ankan.jpg", timestamp: new Date().toLocaleString() }
             ]
         },
         { 
             username: "Abhijit Dutta", 
             commentText: "Amazing work! Keep it up!", 
-            profilePicUrl: "/Project-IoT/assets/abhi.jpg", 
+            profilePicUrl: "../Project-IoT/assets/abhi.jpg", 
             timestamp: new Date().toLocaleString(),
             replies: []
         }
