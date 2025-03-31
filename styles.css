@@ -7,13 +7,11 @@ body {
     text-align: center;
 }
 
-
-
-
 body {
     background: linear-gradient(to right, #1e3a8a, #2563eb); /* Gradient Blue */
     color: white;
 }
+
 
 
 /* Hidden section animation */
@@ -53,6 +51,8 @@ body {
         transform: translateX(-50%);
     }
 }
+
+
 
 /* Project Card Design */
 .project-card {
@@ -149,9 +149,6 @@ body {
 
 
 
-
-
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -166,6 +163,8 @@ body {
 .animate-fadeIn {
     animation: fadeIn 1s ease-out;
 }
+
+
 
 /* Additional styles for better readability and responsiveness */
 header {

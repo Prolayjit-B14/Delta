@@ -18,6 +18,7 @@ gsap.to("#team-section", {
     }
 });
 
+
 // Mobile Menu Toggle Function
 function toggleMenu() {
     document.querySelector('.mobile-menu').classList.toggle('hidden');

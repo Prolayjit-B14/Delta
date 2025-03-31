@@ -83,9 +83,9 @@ const fixedComments = {
             username: "Prolayjit Biswas", 
             commentText: "This is a game-changer! Can't wait to try it.", 
             profilePicUrl: "../assets/prob.jpeg", 
-            timestamp: new Date().toLocaleString(), 
+            timestamp: getRandomTimestamp(), 
             replies: [
-                { username: "Abhijit Dutta", commentText: "Agreed! This innovation is impressive.", profilePicUrl: "../assets/abhi.jpg", timestamp: new Date().toLocaleString() }
+                { username: "Abhijit Dutta", commentText: "Agreed! This innovation is impressive.", profilePicUrl: "../assets/abhi.jpg", timestamp: getRandomTimestamp() }
             ]
         },
         { 
@@ -101,16 +101,34 @@ const fixedComments = {
             username: "Arghya Roy", 
             commentText: "Impressive work! Any plans to add new features?", 
             profilePicUrl: "../assets/arghya.jpg", 
-            timestamp: new Date().toLocaleString(),
+            timestamp: getRandomTimestamp(),
             replies: []
         },
         { 
             username: "Abhijit Dutta", 
             commentText: "This project has huge potential!", 
             profilePicUrl: "../assets/abhi.jpg", 
-            timestamp: new Date().toLocaleString(),
+            timestamp: getRandomTimestamp(),
             replies: [
-                { username: "Prolayjit Biswas", commentText: "Absolutely! I can see this being widely used.", profilePicUrl: "../assets/prob.jpeg", timestamp: new Date().toLocaleString() }
+                { username: "Prolayjit Biswas", commentText: "Absolutely! I can see this being widely used.", profilePicUrl: "../assets/prob.jpeg", timestamp: getRandomTimestamp() }
+            ]
+        }
+    ],
+    "health": [
+        { 
+            username: "Prolayjit Biswas", 
+            commentText: "Impressive work! Keep going buddy ...", 
+            profilePicUrl: "../assets/prob.jpeg", 
+            timestamp: getRandomTimestamp() ,
+            replies: []
+        },
+        { 
+            username: "Abhijit Dutta", 
+            commentText: "This project has huge potential!", 
+            profilePicUrl: "../assets/abhi.jpg", 
+            timestamp: getRandomTimestamp(),
+            replies: [
+                { username: "Ankan Bhowmik", commentText: "Already this is  widely using.", profilePicUrl: "../assets/ankan.jpg", timestamp: getRandomTimestamp() }
             ]
         }
     ]

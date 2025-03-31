@@ -177,7 +177,7 @@ code.language-cpp {
 /* Sidebar Styles */
 #sidebar {
     width: 170px; /* Slightly smaller width */
-    background: #e5e7eb; /* Light gray */
+    background: #ffffff; /* Light gray */
     color: #1f2937; /* Dark gray */
     position: fixed;
     top: 64px; /* Adjust based on navbar height */
