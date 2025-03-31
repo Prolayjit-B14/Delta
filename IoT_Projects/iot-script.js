@@ -96,21 +96,21 @@ const fixedComments = {
             replies: []
         }
     ],
-    "project3": [
+    "home": [
         { 
-            username: "Ankan Bhowmik", 
+            username: "Arghya Roy", 
             commentText: "Impressive work! Any plans to add new features?", 
-            profilePicUrl: "/assets/ankan.jpg", 
+            profilePicUrl: "../assets/arghya.jpg", 
             timestamp: new Date().toLocaleString(),
             replies: []
         },
         { 
-            username: "Anchit", 
+            username: "Abhijit Dutta", 
             commentText: "This project has huge potential!", 
-            profilePicUrl: "/assets/anchit.jpg", 
+            profilePicUrl: "../assets/abhi.jpg", 
             timestamp: new Date().toLocaleString(),
             replies: [
-                { username: "Debopam", commentText: "Absolutely! I can see this being widely used.", profilePicUrl: "/assets/debo.jpg", timestamp: new Date().toLocaleString() }
+                { username: "Prolayjit Biswas", commentText: "Absolutely! I can see this being widely used.", profilePicUrl: "../assets/prob.jpeg", timestamp: new Date().toLocaleString() }
             ]
         }
     ]
