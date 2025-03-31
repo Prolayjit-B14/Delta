@@ -78,20 +78,27 @@ const fixedComments = {
             replies: []
         }
     ],
-    "project2": [
+    "garbage": [
         { 
-            username: "Snehasish", 
+            username: "Prolayjit Biswas", 
             commentText: "This is a game-changer! Can't wait to try it.", 
-            profilePicUrl: "/assets/sneh.jpg", 
+            profilePicUrl: "../assets/prob.jpeg", 
             timestamp: new Date().toLocaleString(), 
             replies: [
-                { username: "Arghya", commentText: "Agreed! This innovation is impressive.", profilePicUrl: "/assets/arghya.jpg", timestamp: new Date().toLocaleString() }
+                { username: "Abhijit Dutta", commentText: "Agreed! This innovation is impressive.", profilePicUrl: "../assets/abhi.jpg", timestamp: new Date().toLocaleString() }
             ]
+        },
+        { 
+            username: "Ankan Bhowmik", 
+            commentText: "Amazing work! Keep it up!", 
+            profilePicUrl: "../assets/ankan.jpg", 
+            timestamp: getRandomTimestamp(),
+            replies: []
         }
     ],
     "project3": [
         { 
-            username: "Ankan", 
+            username: "Ankan Bhowmik", 
             commentText: "Impressive work! Any plans to add new features?", 
             profilePicUrl: "/assets/ankan.jpg", 
             timestamp: new Date().toLocaleString(),

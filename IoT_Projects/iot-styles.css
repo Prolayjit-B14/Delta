@@ -1,17 +1,22 @@
-
-/* Enhanced VS Code-Like Syntax Colors for C++ */
+/* VS Code-Like Syntax Colors for Arduino C++ */
 code.language-cpp {
     font-family: "Fira Code", monospace;
-    font-size: 0.95rem;
+    font-size: 1rem;
     background-color: #1E1E1E;
     color: #D4D4D4;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 12px;
+    border-radius: 8px;
     display: block;
     overflow-x: auto;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
+/* Arduino-Specific Functions (setup(), loop(), digitalWrite(), analogWrite(), delay()) */
+.token.function.arduino {
+    color: #DCDCAA; /* Soft Yellow */
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 /* Keywords (void, int, return, class, struct) */
 .token.keyword {
@@ -19,15 +24,16 @@ code.language-cpp {
     font-weight: bold;
 }
 
-/* Data Types (int, float, double, char) */
+/* Data Types (int, float, char, byte, long) */
 .token.builtin {
     color: #4FC1FF; /* Cyan */
     font-weight: bold;
 }
 
-/* Functions (digitalWrite, delay, main) */
-.token.function {
-    color: #DCDCAA; /* Yellow */
+/* Preprocessor Directives (#include, #define, #ifdef) */
+.token.directive {
+    color: #C586C0; /* Purple */
+    font-weight: bold;
 }
 
 /* Comments (Single-line & Multi-line) */
@@ -36,21 +42,15 @@ code.language-cpp {
     font-style: italic;
 }
 
-/* Numbers (30000, 9, 8) */
+/* Numbers (30000, 9, 8, HIGH, LOW, etc.) */
 .token.number {
     color: #B5CEA8; /* Light Green */
     font-weight: bold;
 }
 
-/* Strings ("Hello World") */
+/* Strings ("Hello World", 'A', etc.) */
 .token.string {
     color: #CE9178; /* Light Red/Orange */
-}
-
-/* Preprocessor Directives (#include, #define) */
-.token.directive {
-    color: #C586C0; /* Purple */
-    font-weight: bold;
 }
 
 /* Macros (NULL, EXIT_SUCCESS) */
@@ -65,39 +65,112 @@ code.language-cpp {
 
 /* Brackets and Punctuation ({} [] ()) */
 .token.punctuation {
-    color: #EEFF01; /* Yellow */
+    color: #EEFF01; /* Bright Yellow */
 }
 
-/* Constants (true, false, nullptr) */
+/* Constants (true, false, nullptr, HIGH, LOW) */
 .token.constant {
     color: #569CD6; /* Light Blue */
     font-weight: bold;
 }
 
-/* Preprocessor Directives (#include, #define, etc.) */
-.token.directive {
-    color: #C586C0 !important; /* Purple */
+/* Pin Numbers (13, A0, A1, etc.) */
+.token.pin-number {
+    color: #FFCC00; /* Gold */
+}
+
+/* Function Parameters (pin, value, delayTime) */
+.token.parameter {
+    color: #9CDCFE; /* Light Blue */
+}
+
+/* Type Aliases (using, typedef) */
+.token.type {
+    color: #C5A3FF; /* Lavender */
+}
+
+/* Template Classes (e.g., Arrays, vectors) */
+.token.template {
+    color: #C5A3FF; /* Lavender */
+}
+
+/* Type Modifiers (signed, unsigned, const) */
+.token.modifier {
+    color: #D7BA7D; /* Light Yellow */
+}
+
+/* Deprecated Code (use of deprecated functions, warnings) */
+.token.deprecated {
+    color: #FF6347; /* Tomato */
+    text-decoration: line-through;
+}
+
+/* Error or Invalid Syntax (invalid syntax, undefined variables) */
+.token.invalid {
+    color: #F44747; /* Red */
     font-weight: bold;
 }
 
-/* Header Files (<Adafruit_Sensor.h>) */
-.token.macro {
-    color: #FF8C00 !important; /* Orange */
+/* Inline Comments (// Single-line) */
+.token.comment.line {
+    color: #57A64A; /* Green */
+}
+
+/* Multi-line Comments (/* Comment */) */
+.token.comment.block {
+    color: #6A9955; /* Green */
+}
+
+/* Escape Sequences in Strings (e.g., \n, \t, etc.) */
+.token.escape {
+    color: #D7BA7D; /* Light Yellow */
+}
+
+/* Include Libraries and Header Files (#include <Adafruit_Sensor.h>) */
+.token.include {
+    color: #FF8C00; /* Orange */
     font-style: italic;
 }
-/* Preprocessor Directives (#include, #define, etc.) */
-.token.directive {
-    color: #C586C0 !important; /* Purple */
+
+/* Function Calls (digitalWrite, analogRead) */
+.token.function-call {
+    color: #DCDCAA; /* Soft Yellow */
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Class Names (MyClass, MyStruct) */
+.token.class-name {
+    color: #FFCC00; /* Gold */
     font-weight: bold;
 }
 
-/* Header Files (<DHT.h>, <Wire.h>) */
-.token.string {
-    color: #FF8C00 !important; /* Orange */
-    font-style: italic;
+/* Struct Names (e.g., MyStruct) */
+.token.struct-name {
+    color: #FFCC00; /* Gold */
+    font-weight: bold;
 }
 
+/* Object Members (e.g., object.pin) */
+.token.object-member {
+    color: #9CDCFE; /* Light Blue */
+}
 
+/* Global Variables (e.g., globalPin) */
+.token.global-variable {
+    color: #B5CEA8; /* Light Green */
+}
+
+/* Function Definitions (return type) */
+.token.function-definition {
+    color: #D4D4D4; /* Light Gray */
+}
+
+/* Header files (e.g., <Wire.h>, <DHT.h>) */
+.token.header-file {
+    color: #FF8C00; /* Orange */
+    font-style: italic;
+}
 
 
 
