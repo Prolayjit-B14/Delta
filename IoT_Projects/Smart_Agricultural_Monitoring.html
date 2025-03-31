@@ -390,17 +390,17 @@ void loop() {
                 <br>
                 <!-- Sorting -->
                     <div class="mb-4 flex justify-between">
-                        <span id="commentCount" class="text-lg font-bold">0 Comments</span>
+                        <span id="commentCount" class="text-lg font-bold">2 Comments</span>
                         <select onchange="sortComments(this.value)" class="border rounded px-3 py-1">
                             <option value="newest">Sort: Newest</option>
                             <option value="oldest">Sort: Oldest</option>
                         </select>
                     </div>
                     <button onclick="likeComment(this)" class="bg-green-500 text-white px-2 py-1 rounded">
-                        👍 <span>0</span>
+                        👍 <span>4</span>
                     </button>
                     <button onclick="dislikeComment(this)" class="bg-red-500 text-white px-2 py-1 rounded">
-                        👎 <span>0</span>
+                        👎 <span>1</span>
                     </button>
                 <!-- Comment List -->
                 <div id="commentList" class="mt-6"></div>
@@ -412,7 +412,7 @@ void loop() {
 
 
 
-        </div>
+
         <!-- Author Section -->
         <div id="author" class="mt-10 mx-auto max-w-4xl bg-white shadow-lg rounded-lg p-10 flex items-center space-x-6">
             <img src="../assets/prob.jpeg" alt="Prolayjit Biswas" class="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md object-cover">
