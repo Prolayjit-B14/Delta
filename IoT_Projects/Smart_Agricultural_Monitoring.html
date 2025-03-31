@@ -373,23 +373,44 @@ void loop() {
 
 
 
+
         <body data-project-id="agricultural"> <!-- Unique ID for each project -->
             <div id="comment" class="mt-10 mx-auto max-w-4xl bg-white ">
                 <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">💬 Leave a Comment</h2>
+
                 <div class="bg-gray-100 p-4 rounded-lg shadow-md flex items-center space-x-3">
                     <label for="profilePic" class="cursor-pointer">
-                        <img id="profilePreview" src="/assets/prob.jpeg" class="w-12 h-12 rounded-full border object-cover">
+                        <img id="profilePreview" src="/assets/.jpeg" class="w-12 h-12 rounded-full border object-cover">
                     </label>
                     <input type="file" id="profilePic" accept="image/*" class="hidden" onchange="previewImage(event)">
                     <input type="text" id="username" class="p-2 border rounded w-1/4" placeholder="Your Name" required>
                     <textarea id="commentInput" class="p-2 border rounded flex-1 resize-none" placeholder="Write a comment..." required></textarea>
                     <button onclick="addComment()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all">Post</button>
                 </div>
+                <br>
+                <!-- Sorting -->
+                    <div class="mb-4 flex justify-between">
+                        <span id="commentCount" class="text-lg font-bold">0 Comments</span>
+                        <select onchange="sortComments(this.value)" class="border rounded px-3 py-1">
+                            <option value="newest">Sort: Newest</option>
+                            <option value="oldest">Sort: Oldest</option>
+                        </select>
+                    </div>
+                    <button onclick="likeComment(this)" class="bg-green-500 text-white px-2 py-1 rounded">
+                        👍 <span>0</span>
+                    </button>
+                    <button onclick="dislikeComment(this)" class="bg-red-500 text-white px-2 py-1 rounded">
+                        👎 <span>0</span>
+                    </button>
                 <!-- Comment List -->
                 <div id="commentList" class="mt-6"></div>
             </div>
         </body>
-        
+
+
+
+
+
 
         </div>
         <!-- Author Section -->

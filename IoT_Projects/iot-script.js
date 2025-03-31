@@ -65,16 +65,16 @@ const fixedComments = {
             username: "Arghya Roy", 
             commentText: "Great project! Looking forward to updates.", 
             profilePicUrl: "../assets/arghya.jpg", 
-            timestamp: new Date().toLocaleString(), 
+            timestamp: getRandomTimestamp(), 
             replies: [
-                { username: "Ankan Bhowmik", commentText: "Absolutely! This looks promising!", profilePicUrl: "../assets/ankan.jpg", timestamp: new Date().toLocaleString() }
+                { username: "Ankan Bhowmik", commentText: "Absolutely! This looks promising!", profilePicUrl: "../assets/ankan.jpg", timestamp: getRandomTimestamp() }
             ]
         },
         { 
             username: "Abhijit Dutta", 
             commentText: "Amazing work! Keep it up!", 
             profilePicUrl: "../assets/abhi.jpg", 
-            timestamp: new Date().toLocaleString(),
+            timestamp: getRandomTimestamp(),
             replies: []
         }
     ],
@@ -145,7 +145,16 @@ function addComment() {
         replies: []
     };
 
-    displayComment(comment);
+        // Display the new comment in the comment section
+        displayComment(comment);
+
+        // Reset input fields
+        document.getElementById("username").value = "";
+        document.getElementById("commentInput").value = "";
+        document.getElementById("profilePreview").src = "assets/default-avatar.png";
+    
+        // Update comment count after adding the new comment
+        updateCommentCount();
     
     // Store in local storage
     const storedComments = JSON.parse(localStorage.getItem(`comments-${projectId}`)) || [];
@@ -232,4 +241,58 @@ function previewImage(event) {
         document.getElementById("profilePreview").src = reader.result;
     };
     reader.readAsDataURL(event.target.files[0]);
+}
+// Function to generate a random timestamp within the last 30 days
+function getRandomTimestamp() {
+    const daysAgo = Math.floor(Math.random() * 30); // Random days in the past (0-30)
+    const randomDate = new Date();
+    randomDate.setDate(randomDate.getDate() - daysAgo);
+    randomDate.setHours(Math.floor(Math.random() * 24));
+    randomDate.setMinutes(Math.floor(Math.random() * 60));
+    randomDate.setSeconds(Math.floor(Math.random() * 60));
+    return randomDate.toLocaleString();
+}
+
+
+function sortComments(type) {
+    let commentList = document.getElementById("commentList");
+    let comments = Array.from(commentList.children);
+    
+    comments.sort((a, b) => {
+        let dateA = new Date(a.querySelector(".text-gray-500").textContent);
+        let dateB = new Date(b.querySelector(".text-gray-500").textContent);
+        
+        if (type === "newest") return dateB - dateA;
+        if (type === "oldest") return dateA - dateB;
+        return 0;
+    });
+
+    commentList.innerHTML = "";
+    comments.forEach(comment => commentList.appendChild(comment));
+}
+
+function likeComment(button) {
+    let commentId = button.closest("div").getAttribute("data-comment-id");
+    let likeCount = button.querySelector("span");
+    let count = parseInt(localStorage.getItem(`likes-${commentId}`) || 0);
+    count++;
+    localStorage.setItem(`likes-${commentId}`, count);
+    likeCount.textContent = count;
+}
+
+function dislikeComment(button) {
+    let commentId = button.closest("div").getAttribute("data-comment-id");
+    let dislikeCount = button.querySelector("span");
+    let count = parseInt(localStorage.getItem(`dislikes-${commentId}`) || 0);
+    count++;
+    localStorage.setItem(`dislikes-${commentId}`, count);
+    dislikeCount.textContent = count;
+}
+
+
+// Function to update the total comment count dynamically
+function updateCommentCount() {
+    const commentList = document.getElementById("commentList");
+    const totalComments = commentList.children.length;
+    document.getElementById("commentCount").textContent = `${totalComments} Comments`;
 }
